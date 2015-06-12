@@ -69,5 +69,10 @@ interface Group extends Array<EventTarget> {
         }
 
 module test {
-    export type Primitive = number | string | boolean;    
+    export type Primitive = number | string | boolean; 
+    tween(name: string, factory: () => (t: number) => any): Transition<Datum>;    
+    style(obj: { [key: string]: Primitive | ((datum: Datum, index: number) => Primitive) }, priority?: string): Transition<Datum>;
+      call(func: (transition: Transition<Datum>, ...args: any[]) => any, ...args: any[]): Transition<Datum>;
+    export function ease(type: 'linear'): (t: number) => number;
+    export function ease(type: 'linear-in'): (t: number) => number;
 }

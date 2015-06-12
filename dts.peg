@@ -137,7 +137,7 @@ SquareKey
 	   square_end   
 
 LiteralType
-	<- ['] identifier [']
+	<- ['] ( [[A-Z]] / [_.$] ) ( [[A-Z]] / [0-9]  /[_?.$<>] / '-' )* [']
 
 VariableDifinition
 	<- identifier TypeSeperator Type
