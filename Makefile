@@ -5,7 +5,7 @@
 PEGNAME = dts
 EXT = .exe
 
-$(PEGNAME)$(EXT): $(PEGNAME).peg.go main.go
+$(PEGNAME)$(EXT): $(PEGNAME).peg.go main.go dts/dts.go
 	go build -o $@
 
 $(PEGNAME).peg.go: $(PEGNAME).peg

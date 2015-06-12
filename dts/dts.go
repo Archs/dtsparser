@@ -54,21 +54,22 @@ func (d *DTS) Init() {
 }
 
 func (d *DTS) NewModule(text string) {
-
+	println("module", text)
 }
 
 func (d *DTS) NewClass(text string) {
-
+	println("class", text)
 }
 
 func (d *DTS) NewInterface(text string) {
+	println("interface", text)
 
 }
 
 func (d *DTS) NewVariable(text string) {
-
+	println("variable", text)
 }
 
 func (d *DTS) NewFunction(text string) {
-
+	println("function", text)
 }

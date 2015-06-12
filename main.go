@@ -23,9 +23,13 @@ func main() {
 		log.Fatal(err)
 	}
 	parser := &Parser{Buffer: string(dat)}
+	parser.DTS.Init()
 	parser.Init()
 	if err := parser.Parse(); err != nil {
 		log.Fatal(err)
 	}
 	parser.PrintSyntaxTree()
+	parser.Execute()
+	// ast := parser.AST()
+	// ast.print(0, parser.Buffer)
 }
