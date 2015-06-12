@@ -148,4 +148,6 @@ interface Transform {
          (url: string, callback: (error: any, rows: { [key: string]: string }[]) => void): DsvXhr<{ [key: string]: string }>;
         (url: string): DsvXhr<{ [key: string]: string }>;
         <T>(url: string, accessor: (row: { [key: string]: string }) => T, callback: (rows: T[]) => void): DsvXhr<T>;
+
+        row<U>(accessor: (row: { [key: string]: string }) => U): DsvXhr<U>;
     }
