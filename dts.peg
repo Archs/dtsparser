@@ -75,7 +75,7 @@ IndexDeclaration
 	   DeclarationSeperator
 
 ExtendClause
-	<- SPACE 'extends' SPACE identifier
+	<- SPACE 'extends' SPACE fakeIdentifier
 
 ImplementClause
 	<- SPACE 'implements' SPACE identifier
@@ -92,7 +92,6 @@ Type
 BasicType
 	<- ArrayType
 		/ FixedArrayType
-		/ GenericType
 		/ ObjectType 
 		/ ParenFunc
 		/ FuncType 
@@ -102,7 +101,7 @@ BasicType
 		/ "function"
 		/ "any"
 		/ LiteralType
-		/ identifier
+		/ fakeIdentifier
 
 ParenFunc
 	<- paren_start 
@@ -129,9 +128,6 @@ ArrayType
 		/ "any"
 		/ identifier
 		/ ObjectType) '[]'
-
-GenericType
-	<- identifier '<' identifier '>'
 
 ObjectType
 	<- block_start
@@ -172,8 +168,11 @@ modifier
 	<- (('declare' / 'export' / 'private' / 'static' 
 	    / 'import' / "var" / "function") SPACE)+
 
-identifier
+fakeIdentifier
 	<- ([[A-Z]]/[_.$]) ([[A-Z]]/[0-9]/[_?.$<>])*
+
+identifier
+	<- ([[A-Z]]/[_.$]) ([[A-Z]]/[0-9]/[_?.$])*
 
 separator
 	<- [:;(){},\[\]=>]
