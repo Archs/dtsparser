@@ -48,10 +48,10 @@ ModuleIdentifier
 	<- 'module' SPACE <identifier> { p.NewModule(text) }
 
 ClassIdentifier
-	<- 'class' SPACE <fakeIdentifier> { p.NewClass(text) }
+	<- 'class' SPACE <Type> { p.NewClass(text) }
 
 InterfaceIdentifier
-	<- 'interface' SPACE <fakeIdentifier> { p.NewInterface(text) }
+	<- 'interface' SPACE <Type> { p.NewInterface(text) }
 
 ClassBody
 	<- block_start
@@ -75,7 +75,7 @@ IndexDeclaration
 	   DeclarationSeperator
 
 ExtendClause
-	<- SPACE 'extends' SPACE fakeIdentifier
+	<- SPACE 'extends' SPACE Type
 
 ImplementClause
 	<- SPACE 'implements' SPACE identifier
@@ -84,13 +84,20 @@ VariableDeclaration
 	<- <modifier? VariableDifinition> DeclarationSeperator {p.NewVariable(buffer[begin:end])}
 
 FuncDeclaration
-	<- <modifier? fakeIdentifier FuncType> DeclarationSeperator {p.NewFunction(buffer[begin:end])}
+	<- <modifier? Type FuncType> DeclarationSeperator {p.NewFunction(buffer[begin:end])}
 
 Type
-	<- BasicType (SPACE '|' SPACE BasicType)*
+	<- BasicType (SPACE '|' SPACE BasicType)* 
+
+GenericType
+	<- identifier 
+	   g_start
+	   	BasicType
+	   g_end
 
 BasicType
 	<- ArrayType
+		/ GenericType
 		/ FixedArrayType
 		/ ObjectType 
 		/ ParenFunc
@@ -101,7 +108,7 @@ BasicType
 		/ "function"
 		/ "any"
 		/ LiteralType
-		/ fakeIdentifier
+		/ identifier
 
 ParenFunc
 	<- paren_start 
@@ -203,6 +210,12 @@ square_start
 
 square_end
 	<- SPACE ']' SPACE
+
+g_start
+	<- SPACE '<' SPACE
+
+g_end
+	<- SPACE '>' SPACE
 
 SPACE
 	<- spacing* 
