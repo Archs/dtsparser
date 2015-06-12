@@ -119,7 +119,7 @@ keywords
 		/ 'boolean' / 'number' / 'string' / 'void'
 
 modifier
-	<- (('declare' / 'export' / 'private' / 'static') SPACE)+
+	<- (('declare' / 'export' / 'private' / 'static' / 'import' / "var" / "function") SPACE)+
 
 identifier
 	<- ([[A-Z]]/[_.$]) ([[A-Z]]/[0-9]/[_?.$])*
