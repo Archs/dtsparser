@@ -65,6 +65,7 @@ Type
 
 BasicType
 	<- ArrayType
+		/ GenericType
 		/ ObjectType 
 		/ FuncType 
 		/ "number" 
@@ -90,6 +91,9 @@ ArrayType
 		/ "any"
 		/ identifier
 		/ ObjectType) '[]'
+
+GenericType
+	<- identifier '<' identifier '>'
 
 ObjectType
 	<- block_start
