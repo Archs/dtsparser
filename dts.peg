@@ -18,8 +18,21 @@ ModuleBody
 		   	/ InterfaceDeclaration
 		   	/ ModuleDeclaration
 			/ VariableDeclaration
-			/ FuncDeclaration)*
+			/ FuncDeclaration
+			/ AssignmentDeclaration)*
 	   block_end
+
+AssignmentDeclaration
+	<- modifier? identifier? AssignmentSeparator AssignmentValue DeclarationSeperator
+
+AssignmentValue
+	<- identifier (Or identifier)* 
+
+AssignmentSeparator
+	<- SPACE '=' SPACE
+
+Or
+	<- SPACE '|' SPACE
 
 ClassDeclaration
 	<- modifier? ClassIdentifier ExtendClause? ImplementClause? ClassBody 
@@ -146,7 +159,8 @@ keywords
 		/ 'boolean' / 'number' / 'string' / 'void'
 
 modifier
-	<- (('declare' / 'export' / 'private' / 'static' / 'import' / "var" / "function") SPACE)+
+	<- (('declare' / 'export' / 'private' / 'static' 
+	    / 'import' / "var" / "function" / "type") SPACE)+
 
 identifier
 	<- ([[A-Z]]/[_.$]) ([[A-Z]]/[0-9]/[_?.$<>])*

@@ -55,6 +55,8 @@ interface JQuery {
     export var prototype: Selection<any>;
     attr(name: string, value: (datum: Datum, index: number) => Primitive): Update<Datum>;
     attr(obj: { [key: string]: Primitive | ((datum: Datum, index: number) => Primitive) }): Update<Datum>;
+    property(obj: { [key: string]: any | ((datum: Datum, index: number) => any) }): Update<Datum>;
+    call(func: (selection: Enter<Datum>, ...args: any[]) => any, ...args: any[]): Enter<Datum>;
 }
 
 interface ValueCallback {
@@ -65,3 +67,7 @@ interface Group extends Array<EventTarget> {
             parentNode: EventTarget;
             [index: number]: Group;
         }
+
+module test {
+    export type Primitive = number | string | boolean;    
+}
