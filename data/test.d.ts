@@ -183,4 +183,18 @@ interface TouchList { }
 
 declare module 'd3' {
     export = d3;
+     _init(options: {}): void;
+    _cleanup(): void;
+    // static require(module:string) : void;
+}
+
+ interface FilterCallback {
+    (value:{},begin?:{},end?:{}): {};
+  }
+
+import Vue = vuejs.Vue;
+
+declare module "vue" {
+    import vue = vuejs.Vue;
+    export = vue;
 }
