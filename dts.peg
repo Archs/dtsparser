@@ -30,7 +30,7 @@ AssignmentModifier
 	    / 'import' / "var" / "function" / 'type') SPACE)+
 
 AssignmentValue
-	<- identifier (Or identifier)* 
+	<- Type (Or Type)* 
 
 AssignmentSeparator
 	<- SPACE '=' SPACE
@@ -45,7 +45,7 @@ InterfaceDeclaration
 	<- modifier? InterfaceIdentifier ExtendClause? InterfaceBody 
 
 ModuleIdentifier
-	<- 'module' SPACE <identifier> { p.NewModule(text) }
+	<- 'module' SPACE <fakeIdentifier> { p.NewModule(text) }
 
 ClassIdentifier
 	<- 'class' SPACE <GenericIdentifier> { p.NewClass(text) }
@@ -191,7 +191,7 @@ modifier
 	    / 'import' / "var" / "function") SPACE)+
 
 fakeIdentifier
-	<- ([[A-Z]]/[_.$]) ([[A-Z]]/[0-9]/[_?.$<>])*
+	<- ([[A-Z]]/[_.$'"]) ([[A-Z]]/[0-9]/[_?.$<>'"])*
 
 identifier
 	<- ([[A-Z]]/[_.$]) ([[A-Z]]/[0-9]/[_?.$])*

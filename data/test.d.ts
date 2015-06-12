@@ -162,4 +162,25 @@ interface Locale {
 
 interface Bundle<T extends bundle.Node> {
             (links: bundle.Link<T>[]): T[][];
+             order(order: (data: Array<[number, number]>) => number[]): Stack<Series, Value>;
+              links(nodes: T[]): tree.Link<T>[];
+            value(): (datum: T, index: number) => number;
+            value(value: (datum: T, index: number) => number): Tree<T>;
         }
+
+interface Link<T extends Node> {
+                source: T;
+                target: T;
+            }
+
+module asdfa {
+    type Padding = number | [number, number, number, number];
+    visit(callback: (node: Node<T>, x1: number, y1: number, x2: number, y2: number) => boolean | void): void;
+    clip(subject: Array<[number, number]>): Array<[number, number]>;
+}
+
+interface TouchList { }
+
+declare module 'd3' {
+    export = d3;
+}
