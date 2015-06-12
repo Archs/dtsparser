@@ -1,0 +1,133 @@
+package main
+
+type Parser Peg {
+}
+
+start
+	<- SPACE (ModuleDeclaration / ClassDeclaration)+ eof
+
+ModuleDeclaration
+	<- modifier? 'module' SPACE identifier ModuleBody
+
+ModuleBody
+	<- block_start 
+		   (ClassDeclaration
+		   	/ ModuleDeclaration
+			/ VariableDeclaration
+			/ FuncDeclaration)*
+	   block_end
+
+ClassDeclaration
+	<- modifier? ('class' / 'interface') SPACE identifier ExtendClause? ImplementClause? ClassBody
+
+ClassBody
+	<- block_start
+			(VariableDeclaration / FuncDeclaration)* 
+	   block_end
+
+ExtendClause
+	<- SPACE 'extends' SPACE identifier
+
+ImplementClause
+	<- SPACE 'implements' SPACE identifier
+
+VariableDeclaration
+	<- modifier? VariableDifinition DeclarationSeperator
+
+FuncDeclaration
+	<- modifier? identifier FuncType DeclarationSeperator
+
+Type
+	<- BasicType (SPACE '|' SPACE BasicType)*
+
+BasicType
+	<- ObjectType 
+		/ ArrayType
+		/ FuncType 
+		/ "number" 
+		/ "boolean"
+		/ "string"
+		/ "function"
+		/ "any"
+		/ LiteralType
+		/ identifier
+
+FuncType
+	<- paren_start 
+			VariableDifinition? (ArgumentSeperator VariableDifinition)*
+	   paren_end 
+	   (( FuncReturn / TypeSeperator) Type)?
+
+ArrayType
+	<-  ("number" 
+		/ "boolean"
+		/ "string"
+		/ "function"
+		/ "Function"
+		/ "any"
+		/ identifier) '[]'
+
+ObjectType
+	<- block_start
+			VariableDeclaration*
+	   block_end
+
+LiteralType
+	<- ['] identifier [']
+
+VariableDifinition
+	<- identifier TypeSeperator Type
+
+TypeSeperator
+	<- SPACE ':' SPACE
+
+FuncReturn
+	<- SPACE '=>' SPACE
+
+ArgumentSeperator
+	<- SPACE ',' SPACE
+
+DeclarationSeperator
+	<- ((';' / eol)? SPACE)?
+
+keywords
+	<- 'module' / 'class' / 'interface' / 'extends' / 'implements'
+		/ 'boolean' / 'number' / 'string' / 'void'
+
+modifier
+	<- (('declare' / 'export' / 'private' / 'static') SPACE)+
+
+identifier
+	<- ([[A-Z]]/[_.]) ([[A-Z]]/[0-9]/[_?.])*
+
+separator
+	<- [:;(){},\[\]=>]
+
+Comment
+	<- LineComment / BlockComment
+
+LineComment
+	<- '//' (!eol .)* eol
+
+BlockComment
+	<- '/*' (!'*/' .)* '*/'
+
+block_start
+	<- SPACE '{' SPACE
+
+block_end
+	<- SPACE '}' SPACE
+
+paren_start
+	<- SPACE '(' SPACE
+
+paren_end
+	<- SPACE ')' SPACE
+
+SPACE
+	<- spacing* 
+
+ws				<- [ \t\n\r]
+spacing         <- [ \t\n\r] / Comment
+eol             <- '\n'
+eof             <- !.
