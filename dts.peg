@@ -48,10 +48,10 @@ ModuleIdentifier
 	<- 'module' SPACE <identifier> { p.NewModule(text) }
 
 ClassIdentifier
-	<- 'class' SPACE <Type> { p.NewClass(text) }
+	<- 'class' SPACE <GenericIdentifier> { p.NewClass(text) }
 
 InterfaceIdentifier
-	<- 'interface' SPACE <Type> { p.NewInterface(text) }
+	<- 'interface' SPACE <GenericIdentifier> { p.NewInterface(text) }
 
 ClassBody
 	<- block_start
@@ -75,7 +75,7 @@ IndexDeclaration
 	   DeclarationSeperator
 
 ExtendClause
-	<- SPACE 'extends' SPACE Type
+	<- SPACE 'extends' SPACE GenericIdentifier
 
 ImplementClause
 	<- SPACE 'implements' SPACE identifier
@@ -84,15 +84,20 @@ VariableDeclaration
 	<- <modifier? VariableDifinition> DeclarationSeperator {p.NewVariable(buffer[begin:end])}
 
 FuncDeclaration
-	<- <modifier? Type FuncType> DeclarationSeperator {p.NewFunction(buffer[begin:end])}
+	<- <modifier? GenericIdentifier FuncType> DeclarationSeperator {p.NewFunction(buffer[begin:end])}
 
 Type
 	<- BasicType (SPACE '|' SPACE BasicType)* 
 
+GenericIdentifier
+	<- identifier GenericForm?
+
 GenericType
-	<- identifier 
-	   g_start
-	   	BasicType
+	<- identifier GenericForm
+
+GenericForm
+	<- g_start
+	   	BasicType (SPACE 'extends' SPACE BasicType)?
 	   g_end
 
 BasicType
