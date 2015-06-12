@@ -76,6 +76,7 @@ BasicType
 	<- ArrayType
 		/ GenericType
 		/ ObjectType 
+		/ ParenFunc
 		/ FuncType 
 		/ "number" 
 		/ "boolean"
@@ -84,6 +85,11 @@ BasicType
 		/ "any"
 		/ LiteralType
 		/ identifier
+
+ParenFunc
+	<- paren_start 
+			FuncType
+	   paren_end 
 
 FuncType
 	<- paren_start 
@@ -106,8 +112,16 @@ GenericType
 
 ObjectType
 	<- block_start
-			VariableDeclaration*
+			(ObjectKey TypeSeperator Type DeclarationSeperator)*
 	   block_end
+
+ObjectKey
+	<- identifier / SquareKey
+
+SquareKey
+	<- square_start
+			identifier TypeSeperator Type
+	   square_end   
 
 LiteralType
 	<- ['] identifier [']

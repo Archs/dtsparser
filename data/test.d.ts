@@ -51,8 +51,10 @@ interface JQuery {
      */
     fun(a:{});
     paramAttributes:{}[];
-     export function select(selector: string): Selection<any>;
-     export var prototype: Selection<any>;
+    export function select(selector: string): Selection<any>;
+    export var prototype: Selection<any>;
+    attr(name: string, value: (datum: Datum, index: number) => Primitive): Update<Datum>;
+    attr(obj: { [key: string]: Primitive | ((datum: Datum, index: number) => Primitive) }): Update<Datum>;
 }
 
 interface ValueCallback {
