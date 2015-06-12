@@ -4,20 +4,20 @@ type Parser Peg {
 }
 
 start
-	<- SPACE (ModuleDeclaration / ClassDeclaration)+ eof
+	<- SPACE (ModuleDeclaration / ClassOrInterfaceDeclaration)+ eof
 
 ModuleDeclaration
 	<- modifier? 'module' SPACE identifier ModuleBody
 
 ModuleBody
 	<- block_start 
-		   (ClassDeclaration
+		   (ClassOrInterfaceDeclaration
 		   	/ ModuleDeclaration
 			/ VariableDeclaration
 			/ FuncDeclaration)*
 	   block_end
 
-ClassDeclaration
+ClassOrInterfaceDeclaration
 	<- modifier? ('class' / 'interface') SPACE identifier ExtendClause? ImplementClause? ClassBody
 
 ClassBody
