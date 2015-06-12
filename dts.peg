@@ -3,14 +3,14 @@ package main
 import "github.com/Archs/dtsparser/dts"
 
 type Parser Peg {
-	*dts.DTS
+	dts.DTS
 }
 
 start
 	<- SPACE (ModuleDeclaration / ClassDeclaration / InterfaceDeclaration )+ eof
 
 ModuleDeclaration
-	<- modifier? 'module' SPACE <identifier> ModuleBody {p.NewModule(text)}
+	<- modifier? ModuleIdentifier ModuleBody
 
 ModuleBody
 	<- block_start 
@@ -22,10 +22,19 @@ ModuleBody
 	   block_end
 
 ClassDeclaration
-	<- modifier? 'class' SPACE <identifier> ExtendClause? ImplementClause? ClassBody {p.NewClass(text)}
+	<- modifier? ClassIdentifier ExtendClause? ImplementClause? ClassBody 
 
 InterfaceDeclaration
-	<- modifier? 'interface' SPACE <identifier> ExtendClause? ClassBody {p.NewInterface(text)}
+	<- modifier? InterfaceIdentifier ExtendClause? ClassBody 
+
+ModuleIdentifier
+	<- 'module' SPACE <identifier> { p.NewModule(text) }
+
+ClassIdentifier
+	<- 'class' SPACE <identifier> { p.NewClass(text) }
+
+InterfaceIdentifier
+	<- 'interface' SPACE <identifier> { p.NewInterface(text) }
 
 ClassBody
 	<- block_start
@@ -39,10 +48,10 @@ ImplementClause
 	<- SPACE 'implements' SPACE identifier
 
 VariableDeclaration
-	<- <modifier? VariableDifinition> DeclarationSeperator {p.NewVariable(text)}
+	<- <modifier? VariableDifinition> DeclarationSeperator {p.NewVariable(buffer[begin:end])}
 
 FuncDeclaration
-	<- <modifier? identifier FuncType> DeclarationSeperator {p.NewFunction(text)}
+	<- <modifier? identifier FuncType> DeclarationSeperator {p.NewFunction(buffer[begin:end])}
 
 Type
 	<- BasicType (SPACE '|' SPACE BasicType)*
