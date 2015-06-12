@@ -142,4 +142,10 @@ interface Transform {
         };
         interpolate(): string | ((points: Array<[number, number]>) => string);
         interpolate(interpolate: "linear"): Line<T>;
+        interpolate(interpolate: (points: Array<[number, number]>) => string): Radial<T>;
+        export function radial(): Radial<Link<Node>, Node>;
+        projection(projection: (d: Node, i: number) => [number, number]): Radial<Link, Node>;
+         (url: string, callback: (error: any, rows: { [key: string]: string }[]) => void): DsvXhr<{ [key: string]: string }>;
+        (url: string): DsvXhr<{ [key: string]: string }>;
+        <T>(url: string, accessor: (row: { [key: string]: string }) => T, callback: (rows: T[]) => void): DsvXhr<T>;
     }

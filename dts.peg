@@ -84,7 +84,7 @@ VariableDeclaration
 	<- <modifier? VariableDifinition> DeclarationSeperator {p.NewVariable(buffer[begin:end])}
 
 FuncDeclaration
-	<- <modifier? GenericIdentifier FuncType> DeclarationSeperator {p.NewFunction(buffer[begin:end])}
+	<- <modifier? identifier FuncType> DeclarationSeperator {p.NewFunction(buffer[begin:end])}
 
 Type
 	<- ('typeof' SPACE)? (BasicType (Or BasicType)*)
@@ -124,7 +124,7 @@ ParenFunc
 	   paren_end 
 
 FuncType
-	<- paren_start 
+	<- GenericForm? paren_start 
 			VariableDifinition? (ArgumentSeperator VariableDifinition)*
 	   paren_end 
 	   (( FuncReturn / TypeSeperator) Type)?
