@@ -120,4 +120,6 @@ class Update<Datum> {
     forEach(func: (value: string) => any): void;
     export function set(array: string[]): Set;
     export function merge<T>(arrays: T[][]): T[];
+    rollup<U>(func: (values: T[]) => U): Nest<T>;
+        map(array: T[]): { [key: string]: any };
 }
