@@ -88,3 +88,9 @@ shape: Circle | Rectangle | Ellipse | Polygon;
         clone(): GraphicsData;
 
 }
+
+ interface Group extends Array<EventTarget> {
+            parentNode: EventTarget;
+        }
+interface Update<Datum> {}
+class Update<Datum> {}

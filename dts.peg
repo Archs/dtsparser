@@ -48,10 +48,10 @@ ModuleIdentifier
 	<- 'module' SPACE <identifier> { p.NewModule(text) }
 
 ClassIdentifier
-	<- 'class' SPACE <identifier> { p.NewClass(text) }
+	<- 'class' SPACE <fakeIdentifier> { p.NewClass(text) }
 
 InterfaceIdentifier
-	<- 'interface' SPACE <identifier> { p.NewInterface(text) }
+	<- 'interface' SPACE <fakeIdentifier> { p.NewInterface(text) }
 
 ClassBody
 	<- block_start
