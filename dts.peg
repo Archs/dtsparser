@@ -87,7 +87,7 @@ FuncDeclaration
 	<- <modifier? GenericIdentifier FuncType> DeclarationSeperator {p.NewFunction(buffer[begin:end])}
 
 Type
-	<- ('typeof' SPACE)? (BasicType (SPACE '|' SPACE BasicType)*)
+	<- ('typeof' SPACE)? (BasicType (Or BasicType)*)
 
 GenericIdentifier
 	<- identifier GenericForm?
@@ -161,6 +161,7 @@ SquareKey
 
 LiteralType
 	<- ['] ( [[A-Z]] / [_.$] ) ( [[A-Z]] / [0-9]  /[_?.$<>] / '-' )* [']
+	  /["] ( [[A-Z]] / [_.$] ) ( [[A-Z]] / [0-9]  /[_?.$<>] / '-' )* ["]
 
 VariableDifinition
 	<- identifier TypeSeperator Type

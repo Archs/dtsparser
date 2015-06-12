@@ -140,4 +140,6 @@ interface Transform {
             (r: number, g: number, b: number): Rgb;
             (color: string): Rgb;
         };
+        interpolate(): string | ((points: Array<[number, number]>) => string);
+        interpolate(interpolate: "linear"): Line<T>;
     }
