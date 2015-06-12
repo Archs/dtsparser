@@ -45,8 +45,17 @@ InterfaceBody
 	<- block_start
 			(VariableDeclaration 
 			 / FuncDeclaration 
-			 / (FuncType DeclarationSeperator))* 
+			 / (FuncType DeclarationSeperator)
+			 / IndexDeclaration)* 
 	   block_end
+
+IndexDeclaration
+	<- square_start
+			VariableDifinition
+	   square_end
+	   TypeSeperator
+	   Type
+	   DeclarationSeperator
 
 ExtendClause
 	<- SPACE 'extends' SPACE identifier
@@ -151,6 +160,12 @@ paren_start
 
 paren_end
 	<- SPACE ')' SPACE
+
+square_start
+	<- SPACE '[' SPACE
+
+square_end
+	<- SPACE ']' SPACE
 
 SPACE
 	<- spacing* 
