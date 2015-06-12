@@ -87,7 +87,7 @@ FuncDeclaration
 	<- <modifier? GenericIdentifier FuncType> DeclarationSeperator {p.NewFunction(buffer[begin:end])}
 
 Type
-	<- BasicType (SPACE '|' SPACE BasicType)* 
+	<- ('typeof' SPACE)? (BasicType (SPACE '|' SPACE BasicType)*)
 
 GenericIdentifier
 	<- identifier GenericForm?

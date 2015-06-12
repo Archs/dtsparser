@@ -104,4 +104,7 @@ class Update<Datum> {
     export function min<T, U extends Numeric>(array: T[], accessor: (datum: T, index: number) => U): U;
 
      export function extent<T extends Numeric>(array: Array<T | Primitive>): [T | Primitive, T | Primitive];
+
+         export function deviation<T>(array: T[], accessor: (datum: T, index: number) => number): number;
+    export var bisect: typeof bisectRight;
 }
