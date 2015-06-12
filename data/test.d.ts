@@ -98,4 +98,5 @@ class Update<Datum> {
     insert(name: (datum: Datum, index: number) => EventTarget, before: (datum: Datum, index: number) => EventTarget): Update<Datum>;
     data(): Datum[];
     data<NewDatum>(data: NewDatum[], key?: (datum: NewDatum, index: number) => string): Update<NewDatum>;
+    export function touch(container: EventTarget, touches: TouchList, identifer: number): [number, number];
 }
