@@ -84,7 +84,7 @@ VariableDeclaration
 	<- <modifier? VariableDifinition> DeclarationSeperator {p.NewVariable(buffer[begin:end])}
 
 FuncDeclaration
-	<- <modifier? identifier FuncType> DeclarationSeperator {p.NewFunction(buffer[begin:end])}
+	<- <modifier? fakeIdentifier FuncType> DeclarationSeperator {p.NewFunction(buffer[begin:end])}
 
 Type
 	<- BasicType (SPACE '|' SPACE BasicType)*

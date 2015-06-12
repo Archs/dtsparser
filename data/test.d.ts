@@ -93,4 +93,9 @@ shape: Circle | Rectangle | Ellipse | Polygon;
             parentNode: EventTarget;
         }
 interface Update<Datum> {}
-class Update<Datum> {}
+class Update<Datum> {
+     property(obj: { [key: string]: any | ((datum: Datum, index: number) => any) }): Update<Datum>;
+    insert(name: (datum: Datum, index: number) => EventTarget, before: (datum: Datum, index: number) => EventTarget): Update<Datum>;
+    data(): Datum[];
+    data<NewDatum>(data: NewDatum[], key?: (datum: NewDatum, index: number) => string): Update<NewDatum>;
+}
