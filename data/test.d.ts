@@ -151,3 +151,15 @@ interface Transform {
 
         row<U>(accessor: (row: { [key: string]: string }) => U): DsvXhr<U>;
     }
+
+interface Locale {
+        numberFormat(specifier: string): (n: number) => string;
+        timeFormat: {
+            (specifier: string): time.Format;
+            utc(specifier: string): time.Format;
+        }
+    }
+
+interface Bundle<T extends bundle.Node> {
+            (links: bundle.Link<T>[]): T[][];
+        }

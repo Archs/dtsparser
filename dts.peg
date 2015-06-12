@@ -135,14 +135,18 @@ FixedArrayType
 	   square_end
 
 ArrayType
-	<-  ("number" 
+	<-  (GenericType
+		/ FixedArrayType
+		/ ObjectType 
+		/ ParenFunc
+		/ FuncType 
+		/ "number" 
 		/ "boolean"
 		/ "string"
 		/ "function"
-		/ "Function"
 		/ "any"
-		/ identifier
-		/ ObjectType) '[]'+
+		/ LiteralType
+		/ identifier) '[]'+
 
 ObjectType
 	<- block_start
