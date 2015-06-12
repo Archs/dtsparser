@@ -1,24 +1,31 @@
 package main
 
+import "github.com/Archs/dtsparser/dts"
+
 type Parser Peg {
+	*dts.DTS
 }
 
 start
-	<- SPACE (ModuleDeclaration / ClassOrInterfaceDeclaration)+ eof
+	<- SPACE (ModuleDeclaration / ClassDeclaration / InterfaceDeclaration )+ eof
 
 ModuleDeclaration
-	<- modifier? 'module' SPACE identifier ModuleBody
+	<- modifier? 'module' SPACE <identifier> ModuleBody {p.NewModule(text)}
 
 ModuleBody
 	<- block_start 
-		   (ClassOrInterfaceDeclaration
+		   (ClassDeclaration
+		   	/ InterfaceDeclaration
 		   	/ ModuleDeclaration
 			/ VariableDeclaration
 			/ FuncDeclaration)*
 	   block_end
 
-ClassOrInterfaceDeclaration
-	<- modifier? ('class' / 'interface') SPACE identifier ExtendClause? ImplementClause? ClassBody
+ClassDeclaration
+	<- modifier? 'class' SPACE <identifier> ExtendClause? ImplementClause? ClassBody {p.NewClass(text)}
+
+InterfaceDeclaration
+	<- modifier? 'interface' SPACE <identifier> ExtendClause? ClassBody {p.NewInterface(text)}
 
 ClassBody
 	<- block_start
@@ -32,10 +39,10 @@ ImplementClause
 	<- SPACE 'implements' SPACE identifier
 
 VariableDeclaration
-	<- modifier? VariableDifinition DeclarationSeperator
+	<- <modifier? VariableDifinition> DeclarationSeperator {p.NewVariable(text)}
 
 FuncDeclaration
-	<- modifier? identifier FuncType DeclarationSeperator
+	<- <modifier? identifier FuncType> DeclarationSeperator {p.NewFunction(text)}
 
 Type
 	<- BasicType (SPACE '|' SPACE BasicType)*
