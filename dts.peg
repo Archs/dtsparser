@@ -97,8 +97,11 @@ GenericType
 
 GenericForm
 	<- g_start
-	   	BasicType (SPACE 'extends' SPACE BasicType)?
+	   	genericDecl (ArgumentSeperator genericDecl)*
 	   g_end
+
+genericDecl
+	<- Type (SPACE 'extends' SPACE Type)?
 
 BasicType
 	<- ArrayType
@@ -128,7 +131,7 @@ FuncType
 
 FixedArrayType
 	<- square_start
-			identifier (ArgumentSeperator identifier)*
+			Type (ArgumentSeperator Type)*
 	   square_end
 
 ArrayType

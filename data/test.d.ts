@@ -102,4 +102,6 @@ class Update<Datum> {
      export function touches(container: EventTarget, touches?: TouchList): Array<[number, number]>;
     export function min<T>(array: T[], accessor: (datum: T, index: number) => string): string;
     export function min<T, U extends Numeric>(array: T[], accessor: (datum: T, index: number) => U): U;
+
+     export function extent<T extends Numeric>(array: Array<T | Primitive>): [T | Primitive, T | Primitive];
 }
