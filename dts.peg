@@ -10,7 +10,9 @@ start
 	<- SPACE (ModuleDeclaration 
 	          / ClassDeclaration 
 	          / InterfaceDeclaration
-	          / AssignmentDeclaration )+ eof
+	          / AssignmentDeclaration
+	          / VariableDeclaration
+	          / FuncDeclaration )+ eof
 
 ModuleDeclaration
 	<- modifier? ModuleIdentifier ModuleBody
@@ -78,10 +80,10 @@ IndexDeclaration
 	   DeclarationSeperator
 
 ExtendClause
-	<- SPACE 'extends' SPACE GenericIdentifier
+	<- SPACE 'extends' SPACE GenericIdentifier (ArgumentSeperator GenericIdentifier)*
 
 ImplementClause
-	<- SPACE 'implements' SPACE identifier
+	<- SPACE 'implements' SPACE identifier (ArgumentSeperator identifier)*
 
 VariableDeclaration
 	<- <modifier? VariableDifinition> DeclarationSeperator {p.NewVariable(buffer[begin:end])}

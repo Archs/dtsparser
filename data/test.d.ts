@@ -198,3 +198,34 @@ declare module "vue" {
     import vue = vuejs.Vue;
     export = vue;
 }
+
+interface KnockoutSubscribable<T> extends KnockoutSubscribableFunctions<T> {
+    subscribe(callback: (newValue: T) => void, target?: any, event?: string): KnockoutSubscription;
+    subscribe<TEvent>(callback: (newValue: TEvent) => void, target: any, event: string): KnockoutSubscription;
+    extend(requestedExtenders: { [key: string]: any; }): KnockoutSubscribable<T>;
+    getSubscriptionsCount(): number;
+    compareArrays<T>(a: T[], b: T[]): Array<KnockoutArrayChange<T>>;
+}
+
+ interface Loader {
+        getConfig? (componentName: string, callback: (result: ComponentConfig) => void): void;
+        loadComponent? (componentName: string, config: ComponentConfig, callback: (result: Definition) => void): void;
+        loadTemplate? (componentName: string, templateConfig: any, callback: (result: Node[]) => void): void;
+        loadViewModel? (componentName: string, viewModelConfig: any, callback: (result: any) => void): void;
+        suppressLoaderExceptions?: boolean;
+    }
+
+interface Definition {
+        template: Node[];
+        createViewModel? (params: any, options: { element: Node; }): any;
+        get(componentName: string, callback: (definition: KnockoutComponentTypes.Definition) => void): void;
+        loaders: KnockoutComponentTypes.Loader[];
+    getComponentNameForNode(node: Node): string;
+
+    }
+
+declare var ko: KnockoutStatic;
+
+declare module "knockout" {
+    export = ko;
+}
