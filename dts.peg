@@ -87,6 +87,7 @@ Type
 
 BasicType
 	<- ArrayType
+		/ FixedArrayType
 		/ GenericType
 		/ ObjectType 
 		/ ParenFunc
@@ -109,6 +110,11 @@ FuncType
 			VariableDifinition? (ArgumentSeperator VariableDifinition)*
 	   paren_end 
 	   (( FuncReturn / TypeSeperator) Type)?
+
+FixedArrayType
+	<- square_start
+			identifier (ArgumentSeperator identifier)*
+	   square_end
 
 ArrayType
 	<-  ("number" 

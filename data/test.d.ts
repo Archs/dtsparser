@@ -75,4 +75,5 @@ module test {
       call(func: (transition: Transition<Datum>, ...args: any[]) => any, ...args: any[]): Transition<Datum>;
     export function ease(type: 'linear'): (t: number) => number;
     export function ease(type: 'linear-in'): (t: number) => number;
+    export function mouse(container: EventTarget): [number, number];
 }
