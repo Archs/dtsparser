@@ -76,6 +76,15 @@ module test {
     export function ease(type: 'linear'): (t: number) => number;
     export function ease(type: 'linear-in'): (t: number) => number;
     export function mouse(container: EventTarget): [number, number];
-    export function touches(container: EventTarget, touches?: TouchList): Array<[number, number]>;
+ once(event: 'touchstart', fn: (event: interaction.InteractionEvent) => void, context?: any): EventEmitter;
+     constructor(lineWidth: number, lineColor: number, lineAlpha: number, fillColor: number, fillAlpha: number, fill: boolean, shape: Circle | Rectangle | Ellipse | Polygon);
+shape: Circle | Rectangle | Ellipse | Polygon;
+shape: Circle | Rectangle | Ellipse | Polygon;
+ once(event: 'touchstart', fn: (event: interaction.InteractionEvent) => void, context?: any): EventEmitter;
+        once(event: string, fn: Function, context?: any): EventEmitter;
+         shape: Circle | Rectangle | Ellipse | Polygon;
+        type: number;
+
+        clone(): GraphicsData;
 
 }

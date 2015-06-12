@@ -23,7 +23,11 @@ ModuleBody
 	   block_end
 
 AssignmentDeclaration
-	<- modifier? identifier? AssignmentSeparator AssignmentValue DeclarationSeperator
+	<- AssignmentModifier? identifier? AssignmentSeparator AssignmentValue DeclarationSeperator
+
+AssignmentModifier
+	<- (('declare' / 'export' / 'private' / 'static' 
+	    / 'import' / "var" / "function" / 'type') SPACE)+
 
 AssignmentValue
 	<- identifier (Or identifier)* 
@@ -166,7 +170,7 @@ keywords
 
 modifier
 	<- (('declare' / 'export' / 'private' / 'static' 
-	    / 'import' / "var" / "function" / "type") SPACE)+
+	    / 'import' / "var" / "function") SPACE)+
 
 identifier
 	<- ([[A-Z]]/[_.$]) ([[A-Z]]/[0-9]/[_?.$<>])*
