@@ -25,7 +25,7 @@ ClassDeclaration
 	<- modifier? ClassIdentifier ExtendClause? ImplementClause? ClassBody 
 
 InterfaceDeclaration
-	<- modifier? InterfaceIdentifier ExtendClause? ClassBody 
+	<- modifier? InterfaceIdentifier ExtendClause? InterfaceBody 
 
 ModuleIdentifier
 	<- 'module' SPACE <identifier> { p.NewModule(text) }
@@ -39,6 +39,13 @@ InterfaceIdentifier
 ClassBody
 	<- block_start
 			(VariableDeclaration / FuncDeclaration)* 
+	   block_end
+
+InterfaceBody
+	<- block_start
+			(VariableDeclaration 
+			 / FuncDeclaration 
+			 / (FuncType DeclarationSeperator))* 
 	   block_end
 
 ExtendClause
