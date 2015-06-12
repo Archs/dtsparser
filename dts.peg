@@ -142,7 +142,7 @@ ArrayType
 		/ "Function"
 		/ "any"
 		/ identifier
-		/ ObjectType) '[]'
+		/ ObjectType) '[]'+
 
 ObjectType
 	<- block_start

@@ -107,4 +107,17 @@ class Update<Datum> {
 
          export function deviation<T>(array: T[], accessor: (datum: T, index: number) => number): number;
     export var bisect: typeof bisectRight;
+
+    export function mean<T>(array: T[], accessor: (datum: T, index: number) => number): number;
+    export function extent<T>(array: T[], accessor: (datum: T, index: number) => number): [number, number];
+
+        call(func: (transition: Transition<Datum>, ...args: any[]) => any, ...args: any[]): Transition<Datum>;
+
+    export function bisector<T, U>(comparator: (a: T, b: U) => number): {
+        left: (array: T[], x: U, lo?: number, hi?: number) => number;
+        right: (array: T[], x: U, lo?: number, hi?: number) => number;
+    }
+    forEach(func: (value: string) => any): void;
+    export function set(array: string[]): Set;
+    export function merge<T>(arrays: T[][]): T[];
 }
