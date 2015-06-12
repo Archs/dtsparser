@@ -126,7 +126,7 @@ modifier
 	<- (('declare' / 'export' / 'private' / 'static' / 'import' / "var" / "function") SPACE)+
 
 identifier
-	<- ([[A-Z]]/[_.$]) ([[A-Z]]/[0-9]/[_?.$])*
+	<- ([[A-Z]]/[_.$]) ([[A-Z]]/[0-9]/[_?.$<>])*
 
 separator
 	<- [:;(){},\[\]=>]
