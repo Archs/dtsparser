@@ -146,7 +146,9 @@ ArrayType
 
 ObjectType
 	<- block_start
-			(ObjectKey TypeSeperator Type DeclarationSeperator)*
+			((ObjectKey TypeSeperator Type DeclarationSeperator)
+			 / FuncDeclaration
+			 / FuncType DeclarationSeperator)*
 	   block_end
 
 ObjectKey

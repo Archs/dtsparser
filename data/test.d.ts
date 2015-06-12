@@ -120,6 +120,24 @@ class Update<Datum> {
     forEach(func: (value: string) => any): void;
     export function set(array: string[]): Set;
     export function merge<T>(arrays: T[][]): T[];
-    rollup<U>(func: (values: T[]) => U): Nest<T>;
-        map(array: T[]): { [key: string]: any };
+      map(array: T[]): { [key: string]: any };
+        map(array: T[], mapType: typeof d3.map): Map<any>;
+        entries(array: T[]): { key: string; values: any }[];
 }
+
+interface Transform {
+        rotate: number;
+        translate: [number, number];
+        skew: number;
+        scale: [number, number];
+        toString(): string;
+        new (r: number, g: number, b: number): Rgb;
+        export function requote(string: string): string;
+
+        export var rgb: {
+            new (r: number, g: number, b: number): Rgb;
+            new (color: string): Rgb;
+            (r: number, g: number, b: number): Rgb;
+            (color: string): Rgb;
+        };
+    }
