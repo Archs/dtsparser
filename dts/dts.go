@@ -81,8 +81,8 @@ type Object struct {
 	Kind Kind
 
 	// for class/interface/object
-	Extents    map[string]*Object
-	Implements map[string]*Object
+	Extents    []string // ids
+	Implements []string // ids
 	// var difinitions
 	Vars        map[string]*Variable
 	Assignments map[string]*Assignment
@@ -174,6 +174,14 @@ func (d *DTS) NewInterface(text string) {
 
 func (d *DTS) NewEnum(text string) {
 	d.newObject(Enum, text)
+}
+
+func (d *DTS) Extends(text string) {
+	d.current.Extents = strings.Split(text, ",")
+}
+
+func (d *DTS) Implements(text string) {
+	d.current.Implements = strings.Split(text, ",")
 }
 
 func (d *DTS) EndBlock(msg string) {

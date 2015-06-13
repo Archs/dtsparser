@@ -3,7 +3,7 @@
 # license that can be found in the LICENSE file.
 
 PEGNAME = dts
-EXT =
+EXT = .exe
 
 $(PEGNAME)$(EXT): $(PEGNAME).peg.go main.go dts/dts.go
 	go build -o $@

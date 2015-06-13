@@ -90,10 +90,10 @@ IndexDeclaration
 	   end
 
 ExtendClause
-	<- space 'extends' space GenericIdentifier (and GenericIdentifier)*
+	<- space 'extends' space <GenericIdentifier (and GenericIdentifier)*> {p.Extends(text)}
 
 ImplementClause
-	<- space 'implements' space Identifier (and Identifier)*
+	<- space 'implements' space <Identifier (and Identifier)*>            {p.Implements(text)}
 
 VariableDeclaration
 	<- <VdModifier VdIdentifier hasType VdType> end {p.EndVariable(text)}
