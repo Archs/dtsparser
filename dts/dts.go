@@ -12,6 +12,29 @@ type Function struct {
 	// Type is the function return type
 }
 
+type Object struct {
+	// module/class/interface/enum/js object
+	Type string
+
+	// for class/interface/object
+	Identifier string
+	Modifier   []string           `json:"omitempty"`
+	Extens     map[string]*Object `json:"omitempty"`
+	Implements map[string]*Object `json:"omitempty"`
+	// var difinitions
+	Vars map[string]*Variable `json:"omitempty"`
+	// using slice here, incase of function override
+	Funcs []*Function `json:"omitempty"`
+	// helpers
+	// constructor for class
+	Constructor *Function
+
+	// for module
+	Classes    map[string]*Object `json:"omitempty"`
+	Interfaces map[string]*Object `json:"omitempty"`
+	Modules    map[string]*Object `json:"omitempty"`
+}
+
 type Class struct {
 	Identifier string
 	Modifier   []string

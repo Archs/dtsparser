@@ -259,4 +259,68 @@ declare module "knockout" {
     import events = require("events");
     import net = require("net");
     import stream = require("stream");
+        /**
+    * QUnit has a bunch of internal configuration defaults, some of which are 
+    * useful to override. Check the description for each option for details.
+    */
+    config: Config;
+        /**
+    * QUnit has a bunch of internal configuration defaults, some of which are 
+    * useful to override. Check the description for each option for details.
+    */
+    config: Config;
+}
+
+/**
+* @param title Title of unit being tested
+* @param test Function to close over assertions
+*/
+declare function test(title: string, test: (assert?: QUnitAssert) => any): any;
+
+declare function notPropEqual(actual: any, expected: any, message?: string): any;
+
+declare function propEqual(actual: any, expected: any, message?: string): any;
+
+// https://github.com/jquery/qunit/blob/master/qunit/qunit.js#L1568
+declare function equiv(a: any, b: any): any;
+
+// https://github.com/jquery/qunit/blob/master/qunit/qunit.js#L661
+declare var raises: any;
+
+/* QUNIT */
+declare var QUnit: QUnitStatic;
+
+interface DoneCallbackObject {
+    /**
+    * The number of failed assertions
+    */
+    failed: number;
+
+    /**
+    * The number of passed assertions
+    */
+    passed: number;
+
+    /**
+    * The total number of assertions
+    */
+    total: number;
+
+    /**
+    * The time in milliseconds it took tests to run from start to finish.
+    */
+    runtime: number;
+    
+    /**
+    * Alias of throws.
+    * 
+    * In very few environments, like Closure Compiler, throws is considered a reserved word
+    * and will cause an error. For that case, an alias is bundled called raises. It has the
+    * same signature and behaviour, just a different name.
+    * 
+    * @param block Function to execute
+    * @param expected Error Object to compare
+    * @param message A short description of the assertion
+    */
+    raises(block: () => any, expected: any, message?: string): any;
 }
