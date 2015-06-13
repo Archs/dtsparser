@@ -66,6 +66,10 @@ func (d *DTS) NewInterface(text string) {
 
 }
 
+func (d *DTS) NewEnum(text string) {
+	println("enum", text)
+}
+
 func (d *DTS) NewVariable(text string) {
 	println("variable", text)
 }

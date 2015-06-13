@@ -10,6 +10,7 @@ start
 	<- space (ModuleDeclaration 
 	          / ClassDeclaration 
 	          / InterfaceDeclaration
+	          / EnumDeclaration
 	          / AssignmentDeclaration
 	          / VariableDeclaration
 	          / FuncDeclaration )+ eof
@@ -25,6 +26,7 @@ ModuleBody
 		   (ClassDeclaration
 		   	/ InterfaceDeclaration
 		   	/ ModuleDeclaration
+		   	/ EnumDeclaration
 			/ VariableDeclaration
 			/ FuncDeclaration
 			/ AssignmentDeclaration)*
@@ -55,8 +57,22 @@ InterfaceBody
 			 / IndexDeclaration)* 
 	   block_end
 
+EnumDeclaration
+	<- modifier? EnumIdentifier EnumBody 
+
+EnumIdentifier
+	<- 'enum' space <Identifier> { p.NewEnum(text) }
+
+EnumBody
+	<- block_start
+			AssignmentDifinition (and AssignmentDifinition)*
+	   block_end
+
 AssignmentDeclaration
-	<- assignmentModifier? Identifier? equals AssignmentValue end
+	<- AssignmentDifinition end
+
+AssignmentDifinition
+	<- assignmentModifier? Identifier? equals AssignmentValue
 
 assignmentModifier
 	<- (('declare' / 'export' / 'private' / 'static' 
