@@ -7,15 +7,15 @@ import (
 	"strings"
 )
 
-type Kind int
+type Kind string
 
 const (
-	TopLevel Kind = iota
-	Module
-	Class
-	Interface
-	Enum
-	Obj
+	TopLevel  Kind = "TopLevel"
+	Module         = "Module"
+	Class          = "Class"
+	Interface      = "Interface"
+	Enum           = "Enum"
+	Obj            = "Obj"
 )
 
 var (
