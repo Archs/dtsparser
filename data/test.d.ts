@@ -162,8 +162,8 @@ interface Locale {
 
 interface Bundle<T extends bundle.Node> {
             (links: bundle.Link<T>[]): T[][];
-             order(order: (data: Array<[number, number]>) => number[]): Stack<Series, Value>;
-              links(nodes: T[]): tree.Link<T>[];
+            order(order: (data: Array<[number, number]>) => number[]): Stack<Series, Value>;
+            links(nodes: T[]): tree.Link<T>[];
             value(): (datum: T, index: number) => number;
             value(value: (datum: T, index: number) => number): Tree<T>;
         }

@@ -35,7 +35,7 @@ AssignmentModifier
 	    / 'import' / "var" / "function" / 'type') SPACE)+
 
 AssignmentValue
-	<- Type (Or Type)* 
+	<- value (Or value)* 
 
 AssignmentSeparator
 	<- SPACE '=' SPACE
@@ -169,8 +169,7 @@ SquareKey
 	   square_end   
 
 LiteralType
-	<- ['] ( [[A-Z]] / [_.$] ) ( [[A-Z]] / [0-9]  /[_?.$<>] / '-' )* [']
-	  /["] ( [[A-Z]] / [_.$] ) ( [[A-Z]] / [0-9]  /[_?.$<>] / '-' )* ["]
+	<- string
 
 VariableDifinition
 	<- identifier TypeSeperator Type
@@ -200,6 +199,24 @@ fakeIdentifier
 
 identifier
 	<- ([[A-Z]]/[_.$]) ([[A-Z]]/[0-9]/[_?.$])*
+
+value
+	<- Type / fcall / number / string
+
+# value for function call
+fcall
+	<- identifier
+	   paren_start
+	   		value (ArgumentSeperator value)*
+	   paren_end
+
+number
+	<- [+-]? [0-9] [.]? [0-9]*
+
+string
+	<- ['] ( [[A-Z]] / [_.$] ) ( [[A-Z]] / [0-9]  /[_?.$<>] / '-' )* [']
+	  /["] ( [[A-Z]] / [_.$] ) ( [[A-Z]] / [0-9]  /[_?.$<>] / '-' )* ["]
+
 
 separator
 	<- [:;(){},\[\]=>]
