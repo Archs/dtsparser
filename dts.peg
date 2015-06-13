@@ -16,7 +16,7 @@ start
 	          / FuncDeclaration )+ eof
 
 ModuleDeclaration
-	<- modifier? ModuleIdentifier ModuleBody
+	<- modifier? ModuleIdentifier ModuleBody { p.EndBlock("module") }
 
 ModuleIdentifier
 	<- 'module' space <fakeIdentifier> { p.NewModule(text) }
@@ -33,7 +33,7 @@ ModuleBody
 	   block_end
 
 ClassDeclaration
-	<- modifier? ClassIdentifier ExtendClause? ImplementClause? ClassBody 
+	<- modifier? ClassIdentifier ExtendClause? ImplementClause? ClassBody { p.EndBlock("class") }
 
 ClassIdentifier
 	<- 'class' space <GenericIdentifier> { p.NewClass(text) }
@@ -44,7 +44,7 @@ ClassBody
 	   block_end
 
 InterfaceDeclaration
-	<- modifier? InterfaceIdentifier ExtendClause? InterfaceBody 
+	<- modifier? InterfaceIdentifier ExtendClause? InterfaceBody { p.EndBlock("interface") }
 
 InterfaceIdentifier
 	<- 'interface' space <GenericIdentifier> { p.NewInterface(text) }
@@ -58,7 +58,7 @@ InterfaceBody
 	   block_end
 
 EnumDeclaration
-	<- modifier? EnumIdentifier EnumBody 
+	<- modifier? EnumIdentifier EnumBody { p.EndBlock("enum") }
 
 EnumIdentifier
 	<- 'enum' space <Identifier> { p.NewEnum(text) }

@@ -23,7 +23,7 @@ func main() {
 		log.Fatal(err)
 	}
 	parser := &Parser{Buffer: string(dat)}
-	parser.DTS.Init()
+	parser.DTS.Init(fpath)
 	parser.Init()
 	if err := parser.Parse(); err != nil {
 		log.Fatal(err)

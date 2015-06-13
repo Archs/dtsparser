@@ -1,5 +1,9 @@
 package dts
 
+import (
+	"path/filepath"
+)
+
 type Kind int
 
 const (
@@ -26,7 +30,7 @@ KNOWN type: string -> string
             module -> struct
             interface -> struct
             toplevel  -> convert the same name package
-                         toplevel object can have no Indentifier
+                         toplevel object has the base name of the .d.ts file
 // var/func overrides -> comment
 // other types just output as comment
 */
@@ -66,18 +70,12 @@ type Object struct {
 	// constructor for class
 	Constructor *Function
 
-	// for module
+	// for module/class/interface
+	parent     *Object
 	Classes    map[string]*Object `json:"omitempty"`
 	Interfaces map[string]*Object `json:"omitempty"`
 	Modules    map[string]*Object `json:"omitempty"`
-}
-
-func newObject(kind Kind, name string) *Object {
-	o := &Object{
-		Kind: kind,
-	}
-	o.Identifier.Name = name
-	return o
+	Enums      map[string]*Object `json:"omitempty"`
 }
 
 type DTS struct {
@@ -87,36 +85,84 @@ type DTS struct {
 	current *Object
 }
 
-func (d DTS) Init() {
+// fpath, the file path of the .d.ts file
+func (d *DTS) Init(fpath string) {
+	base := filepath.Base(fpath)
+	// set the toplevel module name
+	d.Identifier.Name = base
 	d.Object.Kind = TopLevel
+	d.current = &d.Object
 }
 
-func (d DTS) NewModule(text string) {
-	println("module", text)
-	d.current = newObject(Module, text)
-	if d.Modules == nil {
-		d.Modules = make(map[string]*Object)
+func (d *DTS) newObject(kind Kind, name string) *Object {
+	// create the object
+	o := &Object{
+		Kind: kind,
 	}
-	d.Modules[d.current.Name] = d.current
+	o.Identifier.Name = name
+	// set parent
+	if d.current != nil {
+		o.parent = d.current
+	} else {
+		// toplevel
+		o.parent = &d.Object
+	}
+	// add to mapping
+	switch kind {
+	case Module:
+		if d.Modules == nil {
+			d.Modules = make(map[string]*Object)
+		}
+		d.Modules[o.Name] = o
+	case Class:
+		if d.Classes == nil {
+			d.Classes = make(map[string]*Object)
+		}
+		d.Classes[o.Name] = o
+	case Interface:
+		if d.Interfaces == nil {
+			d.Interfaces = make(map[string]*Object)
+		}
+		d.Interfaces[o.Name] = o
+	case Enum:
+		if d.Enums == nil {
+			d.Enums = make(map[string]*Object)
+		}
+		d.Enums[o.Name] = o
+	}
+	d.current = o
+	return o
 }
 
-func (d DTS) NewClass(text string) {
-	println("class", text)
+func (d *DTS) NewModule(text string) {
+	println("\tmodule", text)
+	d.newObject(Module, text)
 }
 
-func (d DTS) NewInterface(text string) {
-	println("interface", text)
-
+func (d *DTS) NewClass(text string) {
+	println("\tclass", text)
+	d.newObject(Class, text)
 }
 
-func (d DTS) NewEnum(text string) {
-	println("enum", text)
+func (d *DTS) NewInterface(text string) {
+	println("\tinterface", text)
+	d.newObject(Interface, text)
 }
 
-func (d DTS) NewVariable(text string) {
+func (d *DTS) NewEnum(text string) {
+	println("\tenum", text)
+	d.newObject(Enum, text)
+}
+
+func (d *DTS) EndBlock(msg string) {
+	println("\tend block:", msg)
+	d.current = d.current.parent
+}
+
+func (d *DTS) NewVariable(text string) {
 	println("variable", text)
 }
 
-func (d DTS) NewFunction(text string) {
+func (d *DTS) NewFunction(text string) {
 	println("function", text)
 }
