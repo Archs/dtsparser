@@ -182,7 +182,7 @@ LiteralType
 	<- String
 
 VariableDifinition
-	<- Identifier hasType Type
+	<- Identifier? hasType Type
 
 keywords
 	<- 'module' / 'class' / 'interface' / 'extends' / 'implements'
@@ -199,7 +199,7 @@ Identifier
 	<- ([[A-Z]]/[_.$]) ([[A-Z]]/[0-9]/[_?.$])*
 
 Value
-	<- Type / FuncCall / Number / String
+	<- FuncCall / Type / Number / String
 
 # Value for function call
 FuncCall
