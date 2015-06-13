@@ -96,10 +96,43 @@ ImplementClause
 	<- space 'implements' space Identifier (and Identifier)*
 
 VariableDeclaration
-	<- <modifier? VariableDifinition> end {p.NewVariable(buffer[begin:end])}
+	<- <VdModifier VdIdentifier hasType VdType> end {p.EndVariable(text)}
+
+VdModifier
+	<- <modifier?>       {p.NewVariable(text)}
+
+VdIdentifier
+	<- <Identifier?>     {p.VSetIdentifier(text)}
+
+VdType
+	<- <Type>            {p.VSetType(text)}
+
+VariableDifinition
+	<- Identifier? hasType Type
 
 FuncDeclaration
-	<- <modifier? Identifier FuncType> end {p.NewFunction(buffer[begin:end])}
+	<- <FdModifier FdIdentifier FdType> end      {p.EndFunction(text)}
+
+FdModifier
+	<- <modifier?>                               {p.NewFunction(text)}
+
+FdIdentifier
+	<- <Identifier>                              {p.FSetIdentifier(text)}
+
+FdType
+	<- GenericForm? paren_start 
+			FuncArgDifinition? (and FuncArgDifinition)*
+	   paren_end 
+	   (( return / hasType) <Type>)?     {p.FSetType(text)}                        
+
+FuncArgDifinition
+	<- <FadIdentifier hasType FadType>    {p.EndArg(text)}
+
+FadIdentifier 
+	<- <Identifier?>                      {p.NewArg(text)}
+
+FadType
+	<- <Type>                             {p.VSetType(text)}    
 
 Type
 	<- ('typeof' space)? (BasicType (or BasicType)*)
@@ -180,9 +213,6 @@ SquareKey
 
 LiteralType
 	<- String
-
-VariableDifinition
-	<- Identifier? hasType Type
 
 keywords
 	<- 'module' / 'class' / 'interface' / 'extends' / 'implements'

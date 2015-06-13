@@ -2,6 +2,8 @@ package dts
 
 import (
 	"path/filepath"
+	"regexp"
+	"strings"
 )
 
 type Kind int
@@ -15,9 +17,26 @@ const (
 	Obj
 )
 
+var (
+	// modifiers = "declare|export|private|static|import|var|function"
+	modifiers = regexp.MustCompile("declare|export|private|static|import|var|function")
+	space     = regexp.MustCompile("[ \r\n\t]+")
+)
+
 type Identifier struct {
 	Name     string
 	Modifier []string
+	// text holding the ide
+	Text string `json:"-"`
+}
+
+func (i *Identifier) isPrivate() bool {
+	for _, v := range i.Modifier {
+		if v == "private" {
+			return true
+		}
+	}
+	return false
 }
 
 /*
@@ -36,6 +55,8 @@ KNOWN type: string -> string
 */
 type Variable struct {
 	Identifier
+	// use for func type
+	IsOptional bool
 	// only convert the KNOWN type to go
 	Type []string // multipy types, return type
 }
@@ -48,7 +69,7 @@ type Assignment struct {
 
 type Function struct {
 	Identifier
-	Args       []Variable
+	Args       []*Variable
 	ReturnType []string
 	// Type is the function return type
 }
@@ -59,23 +80,23 @@ type Object struct {
 	Kind Kind
 
 	// for class/interface/object
-	Extents    map[string]*Object `json:"omitempty"`
-	Implements map[string]*Object `json:"omitempty"`
+	Extents    map[string]*Object
+	Implements map[string]*Object
 	// var difinitions
-	Vars        map[string]*Variable   `json:"omitempty"`
-	Assignments map[string]*Assignment `json:"omitempty"`
+	Vars        map[string]*Variable
+	Assignments map[string]*Assignment
 	// using slice here, incase of function override
-	Funcs []*Function `json:"omitempty"`
+	Funcs []*Function
 	// helpers
 	// constructor for class
 	Constructor *Function
 
 	// for module/class/interface
 	parent     *Object
-	Classes    map[string]*Object `json:"omitempty"`
-	Interfaces map[string]*Object `json:"omitempty"`
-	Modules    map[string]*Object `json:"omitempty"`
-	Enums      map[string]*Object `json:"omitempty"`
+	Classes    map[string]*Object
+	Interfaces map[string]*Object
+	Modules    map[string]*Object
+	Enums      map[string]*Object
 }
 
 type DTS struct {
@@ -83,6 +104,10 @@ type DTS struct {
 	Object
 	// current parsing ojbect
 	current *Object
+	// current variable
+	v *Variable
+	// current function
+	f *Function
 }
 
 // fpath, the file path of the .d.ts file
@@ -135,34 +160,94 @@ func (d *DTS) newObject(kind Kind, name string) *Object {
 }
 
 func (d *DTS) NewModule(text string) {
-	println("\tmodule", text)
 	d.newObject(Module, text)
 }
 
 func (d *DTS) NewClass(text string) {
-	println("\tclass", text)
 	d.newObject(Class, text)
 }
 
 func (d *DTS) NewInterface(text string) {
-	println("\tinterface", text)
 	d.newObject(Interface, text)
 }
 
 func (d *DTS) NewEnum(text string) {
-	println("\tenum", text)
 	d.newObject(Enum, text)
 }
 
 func (d *DTS) EndBlock(msg string) {
-	println("\tend block:", msg)
 	d.current = d.current.parent
 }
 
 func (d *DTS) NewVariable(text string) {
-	println("variable", text)
+	d.v = new(Variable)
+	d.v.Modifier = space.Split(text, -1)
+}
+
+func (d *DTS) VSetIdentifier(text string) {
+	if strings.HasSuffix(text, "?") {
+		d.v.IsOptional = true
+		text = text[:len(text)-1]
+	}
+	d.v.Name = text
+}
+
+func (d *DTS) VSetType(text string) {
+	d.v.Type = strings.Split(text, "|")
+}
+
+func (d *DTS) EndVariable(text string) {
+	d.v.Text = text
+	if d.current.Vars == nil {
+		d.current.Vars = make(map[string]*Variable)
+	}
+	d.current.Vars[d.v.Name] = d.v
+	d.v = nil
 }
 
 func (d *DTS) NewFunction(text string) {
-	println("function", text)
+	d.f = new(Function)
+	d.f.Modifier = space.Split(text, -1)
+}
+
+func (d *DTS) FSetIdentifier(text string) {
+	d.f.Name = text
+}
+
+func (d *DTS) FSetType(text string) {
+	d.f.ReturnType = strings.Split(text, "|")
+}
+
+func (d *DTS) NewArg(text string) {
+	d.v = new(Variable)
+	if strings.HasSuffix(text, "?") {
+		d.v.IsOptional = true
+		text = text[:len(text)-1]
+	}
+	d.v.Name = text
+}
+
+func (d *DTS) EndArg(text string) {
+	d.v.Text = text
+	if d.f.Args == nil {
+		d.f.Args = make([]*Variable, 0)
+	}
+	d.f.Args = append(d.f.Args, d.v)
+	d.v = nil
+}
+
+func (d *DTS) EndFunction(text string) {
+	d.f.Text = text
+	if d.current.Funcs == nil {
+		d.current.Funcs = make([]*Function, 0)
+	}
+	d.current.Funcs = append(d.current.Funcs, d.f)
+	if d.f.Name == "constructor" {
+		d.current.Constructor = d.f
+	}
+	d.f = nil
+}
+
+func (d *DTS) Show(text string) {
+	println(text)
 }

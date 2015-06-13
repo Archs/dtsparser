@@ -11,4 +11,4 @@ This work is in progress, I'll finish it soon.
 
 2. BOM is not supported
     
-    if parsing not parse, try saving the file without UTF8 BOM first
+    if parsing not pass, try saving the file without UTF8 BOM first
