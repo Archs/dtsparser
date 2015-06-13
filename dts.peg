@@ -7,7 +7,7 @@ type Parser Peg {
 }
 
 start
-	<- SPACE (ModuleDeclaration 
+	<- space (ModuleDeclaration 
 	          / ClassDeclaration 
 	          / InterfaceDeclaration
 	          / AssignmentDeclaration
@@ -28,20 +28,14 @@ ModuleBody
 	   block_end
 
 AssignmentDeclaration
-	<- AssignmentModifier? identifier? AssignmentSeparator AssignmentValue DeclarationSeperator
+	<- assignmentModifier? Identifier? equals AssignmentValue end
 
-AssignmentModifier
+assignmentModifier
 	<- (('declare' / 'export' / 'private' / 'static' 
-	    / 'import' / "var" / "function" / 'type') SPACE)+
+	    / 'import' / "var" / "function" / 'type') space)+
 
 AssignmentValue
-	<- value (Or value)* 
-
-AssignmentSeparator
-	<- SPACE '=' SPACE
-
-Or
-	<- SPACE '|' SPACE
+	<- Value (or Value)* 
 
 ClassDeclaration
 	<- modifier? ClassIdentifier ExtendClause? ImplementClause? ClassBody 
@@ -50,13 +44,13 @@ InterfaceDeclaration
 	<- modifier? InterfaceIdentifier ExtendClause? InterfaceBody 
 
 ModuleIdentifier
-	<- 'module' SPACE <fakeIdentifier> { p.NewModule(text) }
+	<- 'module' space <fakeIdentifier> { p.NewModule(text) }
 
 ClassIdentifier
-	<- 'class' SPACE <GenericIdentifier> { p.NewClass(text) }
+	<- 'class' space <GenericIdentifier> { p.NewClass(text) }
 
 InterfaceIdentifier
-	<- 'interface' SPACE <GenericIdentifier> { p.NewInterface(text) }
+	<- 'interface' space <GenericIdentifier> { p.NewInterface(text) }
 
 ClassBody
 	<- block_start
@@ -67,7 +61,7 @@ InterfaceBody
 	<- block_start
 			(VariableDeclaration 
 			 / FuncDeclaration 
-			 / (FuncType DeclarationSeperator)
+			 / (FuncType end)
 			 / IndexDeclaration)* 
 	   block_end
 
@@ -75,38 +69,38 @@ IndexDeclaration
 	<- square_start
 			VariableDifinition
 	   square_end
-	   TypeSeperator
+	   hasType
 	   Type
-	   DeclarationSeperator
+	   end
 
 ExtendClause
-	<- SPACE 'extends' SPACE GenericIdentifier (ArgumentSeperator GenericIdentifier)*
+	<- space 'extends' space GenericIdentifier (and GenericIdentifier)*
 
 ImplementClause
-	<- SPACE 'implements' SPACE identifier (ArgumentSeperator identifier)*
+	<- space 'implements' space Identifier (and Identifier)*
 
 VariableDeclaration
-	<- <modifier? VariableDifinition> DeclarationSeperator {p.NewVariable(buffer[begin:end])}
+	<- <modifier? VariableDifinition> end {p.NewVariable(buffer[begin:end])}
 
 FuncDeclaration
-	<- <modifier? identifier FuncType> DeclarationSeperator {p.NewFunction(buffer[begin:end])}
+	<- <modifier? Identifier FuncType> end {p.NewFunction(buffer[begin:end])}
 
 Type
-	<- ('typeof' SPACE)? (BasicType (Or BasicType)*)
+	<- ('typeof' space)? (BasicType (or BasicType)*)
 
 GenericIdentifier
-	<- identifier GenericForm?
+	<- Identifier GenericForm?
 
 GenericType
-	<- identifier GenericForm
+	<- Identifier GenericForm
 
 GenericForm
 	<- g_start
-	   	genericDecl (ArgumentSeperator genericDecl)*
+	   	genericDecl (and genericDecl)*
 	   g_end
 
 genericDecl
-	<- Type (SPACE 'extends' SPACE Type)?
+	<- Type (space 'extends' space Type)?
 
 BasicType
 	<- ArrayType
@@ -121,7 +115,7 @@ BasicType
 		/ "function"
 		/ "any"
 		/ LiteralType
-		/ identifier
+		/ Identifier
 
 ParenFunc
 	<- paren_start 
@@ -130,13 +124,13 @@ ParenFunc
 
 FuncType
 	<- GenericForm? paren_start 
-			VariableDifinition? (ArgumentSeperator VariableDifinition)*
+			VariableDifinition? (and VariableDifinition)*
 	   paren_end 
-	   (( FuncReturn / TypeSeperator) Type)?
+	   (( return / hasType) Type)?
 
 FixedArrayType
 	<- square_start
-			Type (ArgumentSeperator Type)*
+			Type (and Type)*
 	   square_end
 
 ArrayType
@@ -151,40 +145,28 @@ ArrayType
 		/ "function"
 		/ "any"
 		/ LiteralType
-		/ identifier) '[]'+
+		/ Identifier) '[]'+
 
 ObjectType
 	<- block_start
-			((ObjectKey TypeSeperator Type DeclarationSeperator)
+			((ObjectKey hasType Type end)
 			 / FuncDeclaration
-			 / FuncType DeclarationSeperator)*
+			 / FuncType end)*
 	   block_end
 
 ObjectKey
-	<- identifier / SquareKey
+	<- Identifier / SquareKey
 
 SquareKey
 	<- square_start
-			identifier TypeSeperator Type
+			Identifier hasType Type
 	   square_end   
 
 LiteralType
-	<- string
+	<- String
 
 VariableDifinition
-	<- identifier TypeSeperator Type
-
-TypeSeperator
-	<- SPACE ':' SPACE
-
-FuncReturn
-	<- SPACE '=>' SPACE
-
-ArgumentSeperator
-	<- SPACE ',' SPACE
-
-DeclarationSeperator
-	<- ((';' / eol)? SPACE)?
+	<- Identifier hasType Type
 
 keywords
 	<- 'module' / 'class' / 'interface' / 'extends' / 'implements'
@@ -192,28 +174,28 @@ keywords
 
 modifier
 	<- (('declare' / 'export' / 'private' / 'static' 
-	    / 'import' / "var" / "function") SPACE)+
+	    / 'import' / "var" / "function") space)+
 
 fakeIdentifier
 	<- ([[A-Z]]/[_.$'"]) ([[A-Z]]/[0-9]/[_?.$<>'"])*
 
-identifier
+Identifier
 	<- ([[A-Z]]/[_.$]) ([[A-Z]]/[0-9]/[_?.$])*
 
-value
-	<- Type / fcall / number / string
+Value
+	<- Type / FuncCall / Number / String
 
-# value for function call
-fcall
-	<- identifier
+# Value for function call
+FuncCall
+	<- Identifier
 	   paren_start
-	   		value (ArgumentSeperator value)*
+	   		Value (and Value)*
 	   paren_end
 
-number
+Number
 	<- [+-]? [0-9] [.]? [0-9]*
 
-string
+String
 	<- ['] ( [[A-Z]] / [_.$] ) ( [[A-Z]] / [0-9]  /[_?.$<>] / '-' )* [']
 	  /["] ( [[A-Z]] / [_.$] ) ( [[A-Z]] / [0-9]  /[_?.$<>] / '-' )* ["]
 
@@ -221,43 +203,61 @@ string
 separator
 	<- [:;(){},\[\]=>]
 
-Comment
-	<- LineComment / BlockComment
+return
+	<- space '=>' space
 
-LineComment
-	<- '//' (!eol .)* eol
+hasType
+	<- space ':' space
 
-BlockComment
-	<- '/*' (!'*/' .)* '*/'
+equals
+	<- space '=' space
+
+or
+	<- space '|' space
+
+and
+	<- space ',' space
+
+end
+	<- ((';' / eol)? space)?
 
 block_start
-	<- SPACE '{' SPACE
+	<- space '{' space
 
 block_end
-	<- SPACE '}' SPACE
+	<- space '}' space
 
 paren_start
-	<- SPACE '(' SPACE
+	<- space '(' space
 
 paren_end
-	<- SPACE ')' SPACE
+	<- space ')' space
 
 square_start
-	<- SPACE '[' SPACE
+	<- space '[' space
 
 square_end
-	<- SPACE ']' SPACE
+	<- space ']' space
 
 g_start
-	<- SPACE '<' SPACE
+	<- space '<' space
 
 g_end
-	<- SPACE '>' SPACE
+	<- space '>' space
 
-SPACE
+space
 	<- spacing* 
 
+comment
+	<- lineComment / blockComment
+
+lineComment
+	<- '//' (!eol .)* eol
+
+blockComment
+	<- '/*' (!'*/' .)* '*/'
+
 ws				<- [ \t\n\r]
-spacing         <- [ \t\n\r] / Comment
+spacing         <- [ \t\n\r] / comment
 eol             <- '\n'
 eof             <- !.
