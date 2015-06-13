@@ -28,8 +28,10 @@ func main() {
 	if err := parser.Parse(); err != nil {
 		log.Fatal(err)
 	}
-	// parser.PrintSyntaxTree()
 	parser.Execute()
-	// ast := parser.AST()
-	// ast.print(0, parser.Buffer)
+	json, err := parser.DTS.Json()
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(json)
 }

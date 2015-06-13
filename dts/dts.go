@@ -1,6 +1,7 @@
 package dts
 
 import (
+	"encoding/json"
 	"path/filepath"
 	"regexp"
 	"strings"
@@ -250,4 +251,12 @@ func (d *DTS) EndFunction(text string) {
 
 func (d *DTS) Show(text string) {
 	println(text)
+}
+
+func (d *DTS) Json() (string, error) {
+	dat, err := json.Marshal(d.Object)
+	if err != nil {
+		return "", err
+	}
+	return string(dat), nil
 }
