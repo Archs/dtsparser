@@ -17,6 +17,9 @@ start
 ModuleDeclaration
 	<- modifier? ModuleIdentifier ModuleBody
 
+ModuleIdentifier
+	<- 'module' space <fakeIdentifier> { p.NewModule(text) }
+
 ModuleBody
 	<- block_start 
 		   (ClassDeclaration
@@ -25,6 +28,31 @@ ModuleBody
 			/ VariableDeclaration
 			/ FuncDeclaration
 			/ AssignmentDeclaration)*
+	   block_end
+
+ClassDeclaration
+	<- modifier? ClassIdentifier ExtendClause? ImplementClause? ClassBody 
+
+ClassIdentifier
+	<- 'class' space <GenericIdentifier> { p.NewClass(text) }
+
+ClassBody
+	<- block_start
+			(VariableDeclaration / FuncDeclaration)* 
+	   block_end
+
+InterfaceDeclaration
+	<- modifier? InterfaceIdentifier ExtendClause? InterfaceBody 
+
+InterfaceIdentifier
+	<- 'interface' space <GenericIdentifier> { p.NewInterface(text) }
+
+InterfaceBody
+	<- block_start
+			(VariableDeclaration 
+			 / FuncDeclaration 
+			 / (FuncType end)
+			 / IndexDeclaration)* 
 	   block_end
 
 AssignmentDeclaration
@@ -36,34 +64,6 @@ assignmentModifier
 
 AssignmentValue
 	<- Value (or Value)* 
-
-ClassDeclaration
-	<- modifier? ClassIdentifier ExtendClause? ImplementClause? ClassBody 
-
-InterfaceDeclaration
-	<- modifier? InterfaceIdentifier ExtendClause? InterfaceBody 
-
-ModuleIdentifier
-	<- 'module' space <fakeIdentifier> { p.NewModule(text) }
-
-ClassIdentifier
-	<- 'class' space <GenericIdentifier> { p.NewClass(text) }
-
-InterfaceIdentifier
-	<- 'interface' space <GenericIdentifier> { p.NewInterface(text) }
-
-ClassBody
-	<- block_start
-			(VariableDeclaration / FuncDeclaration)* 
-	   block_end
-
-InterfaceBody
-	<- block_start
-			(VariableDeclaration 
-			 / FuncDeclaration 
-			 / (FuncType end)
-			 / IndexDeclaration)* 
-	   block_end
 
 IndexDeclaration
 	<- square_start
