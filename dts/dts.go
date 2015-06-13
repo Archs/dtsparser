@@ -1,28 +1,65 @@
 package dts
 
+type Kind int
+
+const (
+	TopLevel Kind = iota
+	Module
+	Class
+	Interface
+	Enum
+	Obj
+)
+
+type Identifier struct {
+	Name     string
+	Modifier []string
+}
+
+/*
+KNOWN type: string -> string
+            number -> float64
+            object -> js.M
+            funcion   -> func
+
+            class  -> struct
+            module -> struct
+            interface -> struct
+            toplevel  -> convert the same name package
+                         toplevel object can have no Indentifier
+// var/func overrides -> comment
+// other types just output as comment
+*/
 type Variable struct {
-	Identifier string
-	Modifier   []string
-	Type       []string // multipy types, return type
+	Identifier
+	// only convert the KNOWN type to go
+	Type []string // multipy types, return type
+}
+
+// is this usefull?
+type Assignment struct {
+	Identifier
+	Value string // just a string
 }
 
 type Function struct {
-	Variable
-	Args []Variable
+	Identifier
+	Args       []Variable
+	ReturnType []string
 	// Type is the function return type
 }
 
 type Object struct {
-	// module/class/interface/enum/js object
-	Type string
+	Identifier
+	// module/class/interface/enum/js object/ or top level
+	Kind Kind
 
 	// for class/interface/object
-	Identifier string
-	Modifier   []string           `json:"omitempty"`
-	Extens     map[string]*Object `json:"omitempty"`
+	Extents    map[string]*Object `json:"omitempty"`
 	Implements map[string]*Object `json:"omitempty"`
 	// var difinitions
-	Vars map[string]*Variable `json:"omitempty"`
+	Vars        map[string]*Variable   `json:"omitempty"`
+	Assignments map[string]*Assignment `json:"omitempty"`
 	// using slice here, incase of function override
 	Funcs []*Function `json:"omitempty"`
 	// helpers
@@ -35,68 +72,51 @@ type Object struct {
 	Modules    map[string]*Object `json:"omitempty"`
 }
 
-type Class struct {
-	Identifier string
-	Modifier   []string
-	Extens     map[string]*Class
-	Implements map[string]*Interface
-	Vars       map[string]*Variable
-	Funcs      []*Function // using slice here, incase of function override
-	// helpers
-	Constructor *Function
-}
-
-type Interface struct {
-	Class
-}
-
-type Module struct {
-	Identifier string
-	Modifier   []string
-	Classes    map[string]*Class
-	SubModules map[string]*Module
-	Vars       map[string]*Variable
-	Funcs      []*Function // using slice here, incase of function override
+func newObject(kind Kind, name string) *Object {
+	o := &Object{
+		Kind: kind,
+	}
+	o.Identifier.Name = name
+	return o
 }
 
 type DTS struct {
-	// type register
-	Modules    map[string]*Module
-	Classes    map[string]*Class
-	Interfaces map[string]*Interface
-	// for parsing
-	currentModule    *Module
-	currentClass     *Class
-	currentInterface *Interface
+	// TopLevel object
+	Object
+	// current parsing ojbect
+	current *Object
 }
 
-func (d *DTS) Init() {
-	d.Modules = make(map[string]*Module)
-	d.Classes = make(map[string]*Class)
-	d.Interfaces = make(map[string]*Interface)
+func (d DTS) Init() {
+	d.Object.Kind = TopLevel
 }
 
-func (d *DTS) NewModule(text string) {
+func (d DTS) NewModule(text string) {
 	println("module", text)
+	d.current = newObject(Module, text)
+	if d.Modules == nil {
+		d.Modules = make(map[string]*Object)
+	}
+	d.Modules[d.current.Name] = d.current
 }
 
-func (d *DTS) NewClass(text string) {
+func (d DTS) NewClass(text string) {
 	println("class", text)
 }
 
-func (d *DTS) NewInterface(text string) {
+func (d DTS) NewInterface(text string) {
 	println("interface", text)
 
 }
 
-func (d *DTS) NewEnum(text string) {
+func (d DTS) NewEnum(text string) {
 	println("enum", text)
 }
 
-func (d *DTS) NewVariable(text string) {
+func (d DTS) NewVariable(text string) {
 	println("variable", text)
 }
 
-func (d *DTS) NewFunction(text string) {
+func (d DTS) NewFunction(text string) {
 	println("function", text)
 }
