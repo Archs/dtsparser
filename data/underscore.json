@@ -1,0 +1,4634 @@
+{
+    "Name": "underscore.d.ts",
+    "Kind": "TopLevel",
+    "Vars": {
+        "_": {
+            "Name": "_",
+            "Modifier": ["declare", "var"],
+            "IsOptional": false,
+            "Type": ["UnderscoreStatic"]
+        }
+    },
+    "Interfaces": {
+        "Underscore\u003cT\u003e ": {
+            "Name": "Underscore\u003cT\u003e ",
+            "Kind": "Interface",
+            "Funcs": [{
+                "Name": "each",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, void\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "each",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ObjectIterator\u003cT, void\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "forEach",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, void\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "forEach",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ObjectIterator\u003cT, void\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "map",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult[]"]
+            }, {
+                "Name": "map",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ObjectIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult[]"]
+            }, {
+                "Name": "collect",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult[]"]
+            }, {
+                "Name": "collect",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ObjectIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult[]"]
+            }, {
+                "Name": "reduce",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.MemoIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "memo",
+                    "IsOptional": true,
+                    "Type": ["TResult"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult"]
+            }, {
+                "Name": "inject",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.MemoIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "memo",
+                    "IsOptional": true,
+                    "Type": ["TResult"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult"]
+            }, {
+                "Name": "foldl",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.MemoIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "memo",
+                    "IsOptional": true,
+                    "Type": ["TResult"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult"]
+            }, {
+                "Name": "reduceRight",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.MemoIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "memo",
+                    "IsOptional": true,
+                    "Type": ["TResult"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult"]
+            }, {
+                "Name": "foldr",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.MemoIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "memo",
+                    "IsOptional": true,
+                    "Type": ["TResult"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult"]
+            }, {
+                "Name": "find",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "detect",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "filter",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "select",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "where",
+                "Args": [{
+                    "Name": "properties",
+                    "IsOptional": false,
+                    "Type": ["U"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "findWhere",
+                "Args": [{
+                    "Name": "properties",
+                    "IsOptional": false,
+                    "Type": ["U"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "reject",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "all",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "every",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "any",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "some",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "contains",
+                "Args": [{
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "include",
+                "Args": [{
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "invoke",
+                "Args": [{
+                    "Name": "methodName",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }, {
+                    "Name": "...arguments",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "pluck",
+                "Args": [{
+                    "Name": "propertyName",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }],
+                "ReturnType": ["any[]"]
+            }, {
+                "Name": "max",
+                "Args": null,
+                "ReturnType": ["number"]
+            }, {
+                "Name": "max",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, number\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "max",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, any\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "min",
+                "Args": null,
+                "ReturnType": ["number"]
+            }, {
+                "Name": "min",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, number\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "min",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, any\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "sortBy",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, any\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "sortBy",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "groupBy",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, any\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_.Dictionary\u003c_.List\u003cT\u003e\u003e"]
+            }, {
+                "Name": "groupBy",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_.Dictionary\u003cT[]\u003e"]
+            }, {
+                "Name": "indexBy",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, any\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_.Dictionary\u003cT\u003e"]
+            }, {
+                "Name": "indexBy",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_.Dictionary\u003cT\u003e"]
+            }, {
+                "Name": "countBy",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, any\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_.Dictionary\u003cnumber\u003e"]
+            }, {
+                "Name": "countBy",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_.Dictionary\u003cnumber\u003e"]
+            }, {
+                "Name": "shuffle",
+                "Args": null,
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "sample",
+                "Args": [{
+                    "Name": "n",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "sample",
+                "Args": null,
+                "ReturnType": ["T"]
+            }, {
+                "Name": "toArray",
+                "Args": null,
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "size",
+                "Args": null,
+                "ReturnType": ["number"]
+            }, {
+                "Name": "first",
+                "Args": null,
+                "ReturnType": ["T"]
+            }, {
+                "Name": "first",
+                "Args": [{
+                    "Name": "n",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "head",
+                "Args": null,
+                "ReturnType": ["T"]
+            }, {
+                "Name": "head",
+                "Args": [{
+                    "Name": "n",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "take",
+                "Args": null,
+                "ReturnType": ["T"]
+            }, {
+                "Name": "take",
+                "Args": [{
+                    "Name": "n",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "initial",
+                "Args": [{
+                    "Name": "n",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "last",
+                "Args": null,
+                "ReturnType": ["T"]
+            }, {
+                "Name": "last",
+                "Args": [{
+                    "Name": "n",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "rest",
+                "Args": [{
+                    "Name": "n",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "tail",
+                "Args": [{
+                    "Name": "n",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "drop",
+                "Args": [{
+                    "Name": "n",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "compact",
+                "Args": null,
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "flatten",
+                "Args": [{
+                    "Name": "shallow",
+                    "IsOptional": true,
+                    "Type": ["boolean"]
+                }],
+                "ReturnType": ["any[]"]
+            }, {
+                "Name": "without",
+                "Args": [{
+                    "Name": "...values",
+                    "IsOptional": false,
+                    "Type": ["T[]"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "partition",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[][]"]
+            }, {
+                "Name": "union",
+                "Args": [{
+                    "Name": "...arrays",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e[]"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "intersection",
+                "Args": [{
+                    "Name": "...arrays",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e[]"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "difference",
+                "Args": [{
+                    "Name": "...others",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e[]"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "uniq",
+                "Args": [{
+                    "Name": "isSorted",
+                    "IsOptional": true,
+                    "Type": ["boolean"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, any\u003e"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "uniq",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, TSort\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "unique",
+                "Args": [{
+                    "Name": "isSorted",
+                    "IsOptional": true,
+                    "Type": ["boolean"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, TSort\u003e"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "unique",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, TSort\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "zip",
+                "Args": [{
+                    "Name": "...arrays",
+                    "IsOptional": false,
+                    "Type": ["any[][]"]
+                }],
+                "ReturnType": ["any[][]"]
+            }, {
+                "Name": "object",
+                "Args": [{
+                    "Name": "...keyValuePairs",
+                    "IsOptional": false,
+                    "Type": ["any[][]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "object",
+                "Args": [{
+                    "Name": "values",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "indexOf",
+                "Args": [{
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }, {
+                    "Name": "isSorted",
+                    "IsOptional": true,
+                    "Type": ["boolean"]
+                }],
+                "ReturnType": ["number"]
+            }, {
+                "Name": "indexOf",
+                "Args": [{
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }, {
+                    "Name": "startFrom",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["number"]
+            }, {
+                "Name": "lastIndexOf",
+                "Args": [{
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }, {
+                    "Name": "from",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["number"]
+            }, {
+                "Name": "sortedIndex",
+                "Args": [{
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["(x: T) =\u003e any"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["number"]
+            }, {
+                "Name": "range",
+                "Args": [{
+                    "Name": "stop",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "step",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["number[]"]
+            }, {
+                "Name": "range",
+                "Args": null,
+                "ReturnType": ["number[]"]
+            }, {
+                "Name": "bind",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }, {
+                    "Name": "...arguments",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["Function"]
+            }, {
+                "Name": "bindAll",
+                "Args": [{
+                    "Name": "...methodNames",
+                    "IsOptional": false,
+                    "Type": ["string[]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "partial",
+                "Args": [{
+                    "Name": "...arguments",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["Function"]
+            }, {
+                "Name": "memoize",
+                "Args": [{
+                    "Name": "hashFn",
+                    "IsOptional": true,
+                    "Type": ["(n: any) =\u003e string"]
+                }],
+                "ReturnType": ["Function"]
+            }, {
+                "Name": "defer",
+                "Args": [{
+                    "Name": "...arguments",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["void"]
+            }, {
+                "Name": "delay",
+                "Args": [{
+                    "Name": "wait",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "...arguments",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "delay",
+                "Args": [{
+                    "Name": "...arguments",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "throttle",
+                "Args": [{
+                    "Name": "wait",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "options",
+                    "IsOptional": true,
+                    "Type": ["_.ThrottleSettings"]
+                }],
+                "ReturnType": ["Function"]
+            }, {
+                "Name": "debounce",
+                "Args": [{
+                    "Name": "wait",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "immediate",
+                    "IsOptional": true,
+                    "Type": ["boolean"]
+                }],
+                "ReturnType": ["Function"]
+            }, {
+                "Name": "once",
+                "Args": null,
+                "ReturnType": ["Function"]
+            }, {
+                "Name": "after",
+                "Args": [{
+                    "Name": "fn",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }],
+                "ReturnType": ["Function"]
+            }, {
+                "Name": "before",
+                "Args": [{
+                    "Name": "fn",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }],
+                "ReturnType": ["Function"]
+            }, {
+                "Name": "wrap",
+                "Args": [{
+                    "Name": "wrapper",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }],
+                "ReturnType": ["() =\u003e Function"]
+            }, {
+                "Name": "negate",
+                "Args": null,
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "compose",
+                "Args": [{
+                    "Name": "...functions",
+                    "IsOptional": false,
+                    "Type": ["Function[]"]
+                }],
+                "ReturnType": ["Function"]
+            }, {
+                "Name": "keys",
+                "Args": null,
+                "ReturnType": ["string[]"]
+            }, {
+                "Name": "values",
+                "Args": null,
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "pairs",
+                "Args": null,
+                "ReturnType": ["any[][]"]
+            }, {
+                "Name": "invert",
+                "Args": null,
+                "ReturnType": ["any"]
+            }, {
+                "Name": "s",
+                "Modifier": ["function"],
+                "Args": null,
+                "ReturnType": ["string[]"]
+            }, {
+                "Name": "methods",
+                "Args": null,
+                "ReturnType": ["string[]"]
+            }, {
+                "Name": "extend",
+                "Args": [{
+                    "Name": "...sources",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "pick",
+                "Args": [{
+                    "Name": "...keys",
+                    "IsOptional": false,
+                    "Type": ["string[]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "pick",
+                "Args": [{
+                    "Name": "keys",
+                    "IsOptional": false,
+                    "Type": ["string[]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "pick",
+                "Args": [{
+                    "Name": "fn",
+                    "IsOptional": false,
+                    "Type": ["(value: any, key: any, object: any) =\u003e any"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "omit",
+                "Args": [{
+                    "Name": "...keys",
+                    "IsOptional": false,
+                    "Type": ["string[]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "omit",
+                "Args": [{
+                    "Name": "keys",
+                    "IsOptional": false,
+                    "Type": ["string[]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "omit",
+                "Args": [{
+                    "Name": "fn",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "defaults",
+                "Args": [{
+                    "Name": "...defaults",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "clone",
+                "Args": null,
+                "ReturnType": ["T"]
+            }, {
+                "Name": "tap",
+                "Args": [{
+                    "Name": "interceptor",
+                    "IsOptional": false,
+                    "Type": ["(...as: any[]) =\u003e any"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "has",
+                "Args": [{
+                    "Name": "key",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "matches",
+                "Args": null,
+                "ReturnType": ["_.ListIterator\u003cT, TResult\u003e"]
+            }, {
+                "Name": "property",
+                "Args": null,
+                "ReturnType": ["(object: Object) =\u003e any"]
+            }, {
+                "Name": "isEqual",
+                "Args": [{
+                    "Name": "other",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isEmpty",
+                "Args": null,
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isElement",
+                "Args": null,
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isArray",
+                "Args": null,
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isObject",
+                "Args": null,
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isArguments",
+                "Args": null,
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isFunction",
+                "Args": null,
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isString",
+                "Args": null,
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isNumber",
+                "Args": null,
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isFinite",
+                "Args": null,
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isBoolean",
+                "Args": null,
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isDate",
+                "Args": null,
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isRegExp",
+                "Args": null,
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isNaN",
+                "Args": null,
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isNull",
+                "Args": null,
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isUndefined",
+                "Args": null,
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "identity",
+                "Args": null,
+                "ReturnType": ["any"]
+            }, {
+                "Name": "constant",
+                "Args": null,
+                "ReturnType": ["() =\u003e T"]
+            }, {
+                "Name": "noop",
+                "Args": null,
+                "ReturnType": ["void"]
+            }, {
+                "Name": "times",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["(n: number) =\u003e TResult"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult[]"]
+            }, {
+                "Name": "random",
+                "Args": null,
+                "ReturnType": ["number"]
+            }, {
+                "Name": "random",
+                "Args": [{
+                    "Name": "max",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["number"]
+            }, {
+                "Name": "mixin",
+                "Args": null,
+                "ReturnType": ["void"]
+            }, {
+                "Name": "iteratee",
+                "Args": [{
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }, {
+                    "Name": "argCount",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["Function"]
+            }, {
+                "Name": "uniqueId",
+                "Args": null,
+                "ReturnType": ["string"]
+            }, {
+                "Name": "escape",
+                "Args": null,
+                "ReturnType": ["string"]
+            }, {
+                "Name": "unescape",
+                "Args": null,
+                "ReturnType": ["string"]
+            }, {
+                "Name": "result",
+                "Args": [{
+                    "Name": "property",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "template",
+                "Args": [{
+                    "Name": "settings",
+                    "IsOptional": true,
+                    "Type": ["_.TemplateSettings"]
+                }],
+                "ReturnType": ["(...data: any[]) =\u003e string"]
+            }, {
+                "Name": "chain",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "value",
+                "Args": null,
+                "ReturnType": ["TResult"]
+            }]
+        },
+        "UnderscoreStatic": {
+            "Name": "UnderscoreStatic",
+            "Kind": "Interface",
+            "Vars": {
+                "templateSettings": {
+                    "Name": "templateSettings",
+                    "IsOptional": false,
+                    "Type": ["_.TemplateSettings"]
+                }
+            },
+            "Funcs": [{
+                "Name": "each",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, void\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_.List\u003cT\u003e"]
+            }, {
+                "Name": "each",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["_.Dictionary\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ObjectIterator\u003cT, void\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_.Dictionary\u003cT\u003e"]
+            }, {
+                "Name": "forEach",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, void\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_.List\u003cT\u003e"]
+            }, {
+                "Name": "forEach",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["_.Dictionary\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ObjectIterator\u003cT, void\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_.Dictionary\u003cT\u003e"]
+            }, {
+                "Name": "map",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult[]"]
+            }, {
+                "Name": "map",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["_.Dictionary\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ObjectIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult[]"]
+            }, {
+                "Name": "collect",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult[]"]
+            }, {
+                "Name": "collect",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["_.Dictionary\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ObjectIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult[]"]
+            }, {
+                "Name": "reduce",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.Collection\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.MemoIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "memo",
+                    "IsOptional": true,
+                    "Type": ["TResult"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult"]
+            }, {
+                "Name": "reduce",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.Dictionary\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.MemoObjectIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "memo",
+                    "IsOptional": true,
+                    "Type": ["TResult"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult"]
+            }, {
+                "Name": "inject",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.Collection\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.MemoIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "memo",
+                    "IsOptional": true,
+                    "Type": ["TResult"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult"]
+            }, {
+                "Name": "foldl",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.Collection\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.MemoIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "memo",
+                    "IsOptional": true,
+                    "Type": ["TResult"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult"]
+            }, {
+                "Name": "reduceRight",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.Collection\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.MemoIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "memo",
+                    "IsOptional": true,
+                    "Type": ["TResult"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult"]
+            }, {
+                "Name": "foldr",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.Collection\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.MemoIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "memo",
+                    "IsOptional": true,
+                    "Type": ["TResult"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult"]
+            }, {
+                "Name": "find",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "find",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["_.Dictionary\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ObjectIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "detect",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "detect",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["_.Dictionary\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ObjectIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "findIndex",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["number"]
+            }, {
+                "Name": "filter",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "filter",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["_.Dictionary\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ObjectIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "select",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "select",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["_.Dictionary\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ObjectIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "where",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "properties",
+                    "IsOptional": false,
+                    "Type": ["U"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "findWhere",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "properties",
+                    "IsOptional": false,
+                    "Type": ["U"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "reject",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "reject",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["_.Dictionary\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ObjectIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "every",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "every",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.Dictionary\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ObjectIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "all",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "all",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.Dictionary\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ObjectIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "some",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "some",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["_.Dictionary\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ObjectIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "any",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "any",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["_.Dictionary\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ObjectIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "contains",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "contains",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["_.Dictionary\u003cT\u003e"]
+                }, {
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "include",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.Collection\u003cT\u003e"]
+                }, {
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "include",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["_.Dictionary\u003cT\u003e"]
+                }, {
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "invoke",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "methodName",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }, {
+                    "Name": "...arguments",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "pluck",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "propertyName",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }],
+                "ReturnType": ["any[]"]
+            }, {
+                "Name": "max",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cnumber\u003e"]
+                }],
+                "ReturnType": ["number"]
+            }, {
+                "Name": "max",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, any\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "min",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cnumber\u003e"]
+                }],
+                "ReturnType": ["number"]
+            }, {
+                "Name": "min",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, any\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "sortBy",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, TSort\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "sortBy",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "groupBy",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, any\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_.Dictionary\u003cT[]\u003e"]
+            }, {
+                "Name": "groupBy",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_.Dictionary\u003cT[]\u003e"]
+            }, {
+                "Name": "indexBy",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, any\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_.Dictionary\u003cT\u003e"]
+            }, {
+                "Name": "indexBy",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_.Dictionary\u003cT\u003e"]
+            }, {
+                "Name": "countBy",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, any\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_.Dictionary\u003cnumber\u003e"]
+            }, {
+                "Name": "countBy",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_.Dictionary\u003cnumber\u003e"]
+            }, {
+                "Name": "shuffle",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.Collection\u003cT\u003e"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "sample",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.Collection\u003cT\u003e"]
+                }, {
+                    "Name": "n",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "sample",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.Collection\u003cT\u003e"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "toArray",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.Collection\u003cT\u003e"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "size",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.Collection\u003cT\u003e"]
+                }],
+                "ReturnType": ["number"]
+            }, {
+                "Name": "partition",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["Array\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[][]"]
+            }, {
+                "Name": "first",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "first",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "n",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "head",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "head",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "n",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "take",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "take",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "n",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "initial",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "n",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "last",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "last",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "n",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "rest",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "n",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "tail",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "n",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "drop",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "n",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "compact",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "flatten",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cany\u003e"]
+                }, {
+                    "Name": "shallow",
+                    "IsOptional": true,
+                    "Type": ["boolean"]
+                }],
+                "ReturnType": ["any[]"]
+            }, {
+                "Name": "without",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "...values",
+                    "IsOptional": false,
+                    "Type": ["T[]"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "union",
+                "Args": [{
+                    "Name": "...arrays",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e[]"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "intersection",
+                "Args": [{
+                    "Name": "...arrays",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e[]"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "difference",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "...others",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e[]"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "uniq",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "isSorted",
+                    "IsOptional": true,
+                    "Type": ["boolean"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, TSort\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "uniq",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, TSort\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "unique",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, TSort\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "unique",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "isSorted",
+                    "IsOptional": true,
+                    "Type": ["boolean"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, TSort\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["T[]"]
+            }, {
+                "Name": "zip",
+                "Args": [{
+                    "Name": "...arrays",
+                    "IsOptional": false,
+                    "Type": ["any[][]"]
+                }],
+                "ReturnType": ["any[][]"]
+            }, {
+                "Name": "zip",
+                "Args": [{
+                    "Name": "...arrays",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["any[]"]
+            }, {
+                "Name": "object",
+                "Args": [{
+                    "Name": "keys",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cstring\u003e"]
+                }, {
+                    "Name": "values",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cany\u003e"]
+                }],
+                "ReturnType": ["TResult"]
+            }, {
+                "Name": "object",
+                "Args": [{
+                    "Name": "...keyValuePairs",
+                    "IsOptional": false,
+                    "Type": ["any[][]"]
+                }],
+                "ReturnType": ["TResult"]
+            }, {
+                "Name": "object",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cany\u003e"]
+                }, {
+                    "Name": "values",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult"]
+            }, {
+                "Name": "indexOf",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }, {
+                    "Name": "isSorted",
+                    "IsOptional": true,
+                    "Type": ["boolean"]
+                }],
+                "ReturnType": ["number"]
+            }, {
+                "Name": "indexOf",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }, {
+                    "Name": "startFrom",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["number"]
+            }, {
+                "Name": "lastIndexOf",
+                "Args": [{
+                    "Name": "array",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }, {
+                    "Name": "from",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["number"]
+            }, {
+                "Name": "sortedIndex",
+                "Args": [{
+                    "Name": "list",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e"]
+                }, {
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["(x: T) =\u003e TSort"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["number"]
+            }, {
+                "Name": "range",
+                "Args": [{
+                    "Name": "start",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "stop",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "step",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["number[]"]
+            }, {
+                "Name": "range",
+                "Args": [{
+                    "Name": "stop",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["number[]"]
+            }, {
+                "Name": "bind",
+                "Args": [{
+                    "Name": "func",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }, {
+                    "Name": "...arguments",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["() =\u003e any"]
+            }, {
+                "Name": "bindAll",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }, {
+                    "Name": "...methodNames",
+                    "IsOptional": false,
+                    "Type": ["string[]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "partial",
+                "Args": [{
+                    "Name": "fn",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }, {
+                    "Name": "...arguments",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["Function"]
+            }, {
+                "Name": "memoize",
+                "Args": [{
+                    "Name": "fn",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }, {
+                    "Name": "hashFn",
+                    "IsOptional": true,
+                    "Type": ["(...args: any[]) =\u003e string"]
+                }],
+                "ReturnType": ["Function"]
+            }, {
+                "Name": "delay",
+                "Args": [{
+                    "Name": "func",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }, {
+                    "Name": "wait",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "...arguments",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "delay",
+                "Args": [{
+                    "Name": "func",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }, {
+                    "Name": "...arguments",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "defer",
+                "Args": [{
+                    "Name": "fn",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }, {
+                    "Name": "...arguments",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["void"]
+            }, {
+                "Name": "throttle",
+                "Args": [{
+                    "Name": "func",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }, {
+                    "Name": "wait",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "options",
+                    "IsOptional": true,
+                    "Type": ["_.ThrottleSettings"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "debounce",
+                "Args": [{
+                    "Name": "fn",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }, {
+                    "Name": "wait",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "immediate",
+                    "IsOptional": true,
+                    "Type": ["boolean"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "once",
+                "Args": [{
+                    "Name": "fn",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "after",
+                "Args": [{
+                    "Name": "count",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "fn",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }],
+                "ReturnType": ["Function"]
+            }, {
+                "Name": "before",
+                "Args": [{
+                    "Name": "count",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "fn",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }],
+                "ReturnType": ["Function"]
+            }, {
+                "Name": "wrap",
+                "Args": [{
+                    "Name": "fn",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }, {
+                    "Name": "wrapper",
+                    "IsOptional": false,
+                    "Type": ["(fn: Function, ...args: any[]) =\u003e any"]
+                }],
+                "ReturnType": ["Function"]
+            }, {
+                "Name": "negate",
+                "Args": [{
+                    "Name": "predicate",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "compose",
+                "Args": [{
+                    "Name": "...functions",
+                    "IsOptional": false,
+                    "Type": ["Function[]"]
+                }],
+                "ReturnType": ["Function"]
+            }, {
+                "Name": "keys",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["string[]"]
+            }, {
+                "Name": "values",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["any[]"]
+            }, {
+                "Name": "mapObject",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["_.Dictionary\u003cT\u003e"]
+                }, {
+                    "Name": "iteratee",
+                    "IsOptional": false,
+                    "Type": ["(val: T, key: string, object: _.Dictionary\u003cT\u003e) =\u003e U"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_.Dictionary\u003cU\u003e"]
+            }, {
+                "Name": "mapObject",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }, {
+                    "Name": "iteratee",
+                    "IsOptional": false,
+                    "Type": ["(val: any, key: string, object: any) =\u003e T"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_.Dictionary\u003cT\u003e"]
+            }, {
+                "Name": "mapObject",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }, {
+                    "Name": "iteratee",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_.Dictionary\u003cany\u003e"]
+            }, {
+                "Name": "pairs",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["any[][]"]
+            }, {
+                "Name": "invert",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "s",
+                "Modifier": ["function"],
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["string[]"]
+            }, {
+                "Name": "methods",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["string[]"]
+            }, {
+                "Name": "extend",
+                "Args": [{
+                    "Name": "destination",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }, {
+                    "Name": "...sources",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "pick",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }, {
+                    "Name": "...keys",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "pick",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }, {
+                    "Name": "fn",
+                    "IsOptional": false,
+                    "Type": ["(value: any, key: any, object: any) =\u003e any"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "omit",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }, {
+                    "Name": "...keys",
+                    "IsOptional": false,
+                    "Type": ["string[]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "omit",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }, {
+                    "Name": "keys",
+                    "IsOptional": false,
+                    "Type": ["string[]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "omit",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }, {
+                    "Name": "iteratee",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "defaults",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }, {
+                    "Name": "...defaults",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "clone",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "tap",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }, {
+                    "Name": "intercepter",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "has",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }, {
+                    "Name": "key",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "matches",
+                "Args": [{
+                    "Name": "attrs",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }],
+                "ReturnType": ["_.ListIterator\u003cT, TResult\u003e"]
+            }, {
+                "Name": "property",
+                "Args": [{
+                    "Name": "key",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }],
+                "ReturnType": ["(object: Object) =\u003e any"]
+            }, {
+                "Name": "isEqual",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }, {
+                    "Name": "other",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isEmpty",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isElement",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isArray",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isObject",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isArguments",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isFunction",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isString",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isNumber",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isFinite",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isBoolean",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isDate",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isRegExp",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isNaN",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isNull",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "isUndefined",
+                "Args": [{
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["boolean"]
+            }, {
+                "Name": "noConflict",
+                "Args": null,
+                "ReturnType": ["any"]
+            }, {
+                "Name": "identity",
+                "Args": [{
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }],
+                "ReturnType": ["T"]
+            }, {
+                "Name": "constant",
+                "Args": [{
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }],
+                "ReturnType": ["() =\u003e T"]
+            }, {
+                "Name": "noop",
+                "Args": null,
+                "ReturnType": ["void"]
+            }, {
+                "Name": "times",
+                "Args": [{
+                    "Name": "n",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["(n: number) =\u003e TResult"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["TResult[]"]
+            }, {
+                "Name": "random",
+                "Args": [{
+                    "Name": "max",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["number"]
+            }, {
+                "Name": "random",
+                "Args": [{
+                    "Name": "min",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "max",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["number"]
+            }, {
+                "Name": "mixin",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["void"]
+            }, {
+                "Name": "iteratee",
+                "Args": [{
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }],
+                "ReturnType": ["Function"]
+            }, {
+                "Name": "iteratee",
+                "Args": [{
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }, {
+                    "Name": "argCount",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["Function"]
+            }, {
+                "Name": "iteratee",
+                "Args": [{
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["Object"]
+                }],
+                "ReturnType": ["Function"]
+            }, {
+                "Name": "uniqueId",
+                "Args": [{
+                    "Name": "prefix",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }],
+                "ReturnType": ["string"]
+            }, {
+                "Name": "uniqueId",
+                "Args": null,
+                "ReturnType": ["number"]
+            }, {
+                "Name": "escape",
+                "Args": [{
+                    "Name": "str",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }],
+                "ReturnType": ["string"]
+            }, {
+                "Name": "unescape",
+                "Args": [{
+                    "Name": "str",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }],
+                "ReturnType": ["string"]
+            }, {
+                "Name": "result",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }, {
+                    "Name": "property",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }],
+                "ReturnType": ["any"]
+            }, {
+                "Name": "template",
+                "Args": [{
+                    "Name": "templateString",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }, {
+                    "Name": "settings",
+                    "IsOptional": true,
+                    "Type": ["_.TemplateSettings"]
+                }],
+                "ReturnType": ["(...data: any[]) =\u003e string"]
+            }, {
+                "Name": "now",
+                "Args": null,
+                "ReturnType": ["number"]
+            }, {
+                "Name": "chain",
+                "Args": [{
+                    "Name": "obj",
+                    "IsOptional": false,
+                    "Type": ["T[]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "chain",
+                "Args": [{
+                    "Name": "obj",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "value",
+                "Args": [{
+                    "Name": "obj",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }],
+                "ReturnType": ["TResult"]
+            }]
+        },
+        "_Chain\u003cT\u003e ": {
+            "Name": "_Chain\u003cT\u003e ",
+            "Kind": "Interface",
+            "Funcs": [{
+                "Name": "each",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, void\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "each",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ObjectIterator\u003cT, void\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "forEach",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, void\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "forEach",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ObjectIterator\u003cT, void\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "map",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, TArray[]\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_ChainOfArrays\u003cTArray\u003e"]
+            }, {
+                "Name": "map",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cTResult\u003e"]
+            }, {
+                "Name": "map",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ObjectIterator\u003cT, TArray[]\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_ChainOfArrays\u003cTArray\u003e"]
+            }, {
+                "Name": "map",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ObjectIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cTResult\u003e"]
+            }, {
+                "Name": "collect",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cTResult\u003e"]
+            }, {
+                "Name": "collect",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ObjectIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cTResult\u003e"]
+            }, {
+                "Name": "reduce",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.MemoIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "memo",
+                    "IsOptional": true,
+                    "Type": ["TResult"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_ChainSingle\u003cTResult\u003e"]
+            }, {
+                "Name": "inject",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.MemoIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "memo",
+                    "IsOptional": true,
+                    "Type": ["TResult"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_ChainSingle\u003cTResult\u003e"]
+            }, {
+                "Name": "foldl",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.MemoIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "memo",
+                    "IsOptional": true,
+                    "Type": ["TResult"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_ChainSingle\u003cTResult\u003e"]
+            }, {
+                "Name": "reduceRight",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.MemoIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "memo",
+                    "IsOptional": true,
+                    "Type": ["TResult"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_ChainSingle\u003cTResult\u003e"]
+            }, {
+                "Name": "foldr",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.MemoIterator\u003cT, TResult\u003e"]
+                }, {
+                    "Name": "memo",
+                    "IsOptional": true,
+                    "Type": ["TResult"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_ChainSingle\u003cTResult\u003e"]
+            }, {
+                "Name": "find",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_ChainSingle\u003cT\u003e"]
+            }, {
+                "Name": "detect",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "filter",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "select",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "where",
+                "Args": [{
+                    "Name": "properties",
+                    "IsOptional": false,
+                    "Type": ["U"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "findWhere",
+                "Args": [{
+                    "Name": "properties",
+                    "IsOptional": false,
+                    "Type": ["U"]
+                }],
+                "ReturnType": ["_ChainSingle\u003cT\u003e"]
+            }, {
+                "Name": "reject",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "all",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "every",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "any",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "some",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "contains",
+                "Args": [{
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "include",
+                "Args": [{
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "invoke",
+                "Args": [{
+                    "Name": "methodName",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }, {
+                    "Name": "...arguments",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "pluck",
+                "Args": [{
+                    "Name": "propertyName",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }],
+                "ReturnType": ["_Chain\u003cany\u003e"]
+            }, {
+                "Name": "max",
+                "Args": null,
+                "ReturnType": ["_ChainSingle\u003cT\u003e"]
+            }, {
+                "Name": "max",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, number\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_ChainSingle\u003cT\u003e"]
+            }, {
+                "Name": "max",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, any\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_ChainSingle\u003cT\u003e"]
+            }, {
+                "Name": "min",
+                "Args": null,
+                "ReturnType": ["_ChainSingle\u003cT\u003e"]
+            }, {
+                "Name": "min",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, number\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_ChainSingle\u003cT\u003e"]
+            }, {
+                "Name": "min",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, any\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_ChainSingle\u003cT\u003e"]
+            }, {
+                "Name": "sortBy",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, any\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "sortBy",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "groupBy",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, any\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_ChainOfArrays\u003cT\u003e"]
+            }, {
+                "Name": "groupBy",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_ChainOfArrays\u003cT\u003e"]
+            }, {
+                "Name": "indexBy",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, any\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "indexBy",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "countBy",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, any\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "countBy",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "shuffle",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "sample",
+                "Args": [{
+                    "Name": "n",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "sample",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "toArray",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "size",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "first",
+                "Args": null,
+                "ReturnType": ["_ChainSingle\u003cT\u003e"]
+            }, {
+                "Name": "first",
+                "Args": [{
+                    "Name": "n",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "head",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "head",
+                "Args": [{
+                    "Name": "n",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "take",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "take",
+                "Args": [{
+                    "Name": "n",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "initial",
+                "Args": [{
+                    "Name": "n",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "last",
+                "Args": null,
+                "ReturnType": ["_ChainSingle\u003cT\u003e"]
+            }, {
+                "Name": "last",
+                "Args": [{
+                    "Name": "n",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "rest",
+                "Args": [{
+                    "Name": "n",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "tail",
+                "Args": [{
+                    "Name": "n",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "drop",
+                "Args": [{
+                    "Name": "n",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "compact",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "flatten",
+                "Args": [{
+                    "Name": "shallow",
+                    "IsOptional": true,
+                    "Type": ["boolean"]
+                }],
+                "ReturnType": ["_Chain\u003cany\u003e"]
+            }, {
+                "Name": "without",
+                "Args": [{
+                    "Name": "...values",
+                    "IsOptional": false,
+                    "Type": ["T[]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "partition",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["_.ListIterator\u003cT, boolean\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT[][]\u003e"]
+            }, {
+                "Name": "union",
+                "Args": [{
+                    "Name": "...arrays",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e[]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "intersection",
+                "Args": [{
+                    "Name": "...arrays",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e[]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "difference",
+                "Args": [{
+                    "Name": "...others",
+                    "IsOptional": false,
+                    "Type": ["_.List\u003cT\u003e[]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "uniq",
+                "Args": [{
+                    "Name": "isSorted",
+                    "IsOptional": true,
+                    "Type": ["boolean"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, any\u003e"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "uniq",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, TSort\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "unique",
+                "Args": [{
+                    "Name": "isSorted",
+                    "IsOptional": true,
+                    "Type": ["boolean"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, TSort\u003e"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "unique",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["_.ListIterator\u003cT, TSort\u003e"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "zip",
+                "Args": [{
+                    "Name": "...arrays",
+                    "IsOptional": false,
+                    "Type": ["any[][]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "object",
+                "Args": [{
+                    "Name": "...keyValuePairs",
+                    "IsOptional": false,
+                    "Type": ["any[][]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "object",
+                "Args": [{
+                    "Name": "values",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "indexOf",
+                "Args": [{
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }, {
+                    "Name": "isSorted",
+                    "IsOptional": true,
+                    "Type": ["boolean"]
+                }],
+                "ReturnType": ["_ChainSingle\u003cT\u003e"]
+            }, {
+                "Name": "indexOf",
+                "Args": [{
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }, {
+                    "Name": "startFrom",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["_ChainSingle\u003cT\u003e"]
+            }, {
+                "Name": "lastIndexOf",
+                "Args": [{
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }, {
+                    "Name": "from",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["_ChainSingle\u003cT\u003e"]
+            }, {
+                "Name": "sortedIndex",
+                "Args": [{
+                    "Name": "value",
+                    "IsOptional": false,
+                    "Type": ["T"]
+                }, {
+                    "Name": "iterator",
+                    "IsOptional": true,
+                    "Type": ["(x: T) =\u003e any"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "range",
+                "Args": [{
+                    "Name": "stop",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "step",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "range",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "bind",
+                "Args": [{
+                    "Name": "object",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }, {
+                    "Name": "...arguments",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "bindAll",
+                "Args": [{
+                    "Name": "...methodNames",
+                    "IsOptional": false,
+                    "Type": ["string[]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "partial",
+                "Args": [{
+                    "Name": "...arguments",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "memoize",
+                "Args": [{
+                    "Name": "hashFn",
+                    "IsOptional": true,
+                    "Type": ["(n: any) =\u003e string"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "defer",
+                "Args": [{
+                    "Name": "...arguments",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "delay",
+                "Args": [{
+                    "Name": "wait",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "...arguments",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "delay",
+                "Args": [{
+                    "Name": "...arguments",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "throttle",
+                "Args": [{
+                    "Name": "wait",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "options",
+                    "IsOptional": true,
+                    "Type": ["_.ThrottleSettings"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "debounce",
+                "Args": [{
+                    "Name": "wait",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "immediate",
+                    "IsOptional": true,
+                    "Type": ["boolean"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "once",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "after",
+                "Args": [{
+                    "Name": "func",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "before",
+                "Args": [{
+                    "Name": "fn",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "wrap",
+                "Args": [{
+                    "Name": "wrapper",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }],
+                "ReturnType": ["() =\u003e _Chain\u003cT\u003e"]
+            }, {
+                "Name": "negate",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "compose",
+                "Args": [{
+                    "Name": "...functions",
+                    "IsOptional": false,
+                    "Type": ["Function[]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "keys",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cstring\u003e"]
+            }, {
+                "Name": "values",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "pairs",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "invert",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "s",
+                "Modifier": ["function"],
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "methods",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "extend",
+                "Args": [{
+                    "Name": "...sources",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "pick",
+                "Args": [{
+                    "Name": "...keys",
+                    "IsOptional": false,
+                    "Type": ["string[]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "pick",
+                "Args": [{
+                    "Name": "fn",
+                    "IsOptional": false,
+                    "Type": ["(value: any, key: any, object: any) =\u003e any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "omit",
+                "Args": [{
+                    "Name": "...keys",
+                    "IsOptional": false,
+                    "Type": ["string[]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "omit",
+                "Args": [{
+                    "Name": "keys",
+                    "IsOptional": false,
+                    "Type": ["string[]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "omit",
+                "Args": [{
+                    "Name": "iteratee",
+                    "IsOptional": false,
+                    "Type": ["Function"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "defaults",
+                "Args": [{
+                    "Name": "...defaults",
+                    "IsOptional": false,
+                    "Type": ["any[]"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "clone",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "tap",
+                "Args": [{
+                    "Name": "interceptor",
+                    "IsOptional": false,
+                    "Type": ["(...as: any[]) =\u003e any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "has",
+                "Args": [{
+                    "Name": "key",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "matches",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "property",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "isEqual",
+                "Args": [{
+                    "Name": "other",
+                    "IsOptional": false,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "isEmpty",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "isElement",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "isArray",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "isObject",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "isArguments",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "isFunction",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "isString",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "isNumber",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "isFinite",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "isBoolean",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "isDate",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "isRegExp",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "isNaN",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "isNull",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "isUndefined",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "identity",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "constant",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "noop",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "times",
+                "Args": [{
+                    "Name": "iterator",
+                    "IsOptional": false,
+                    "Type": ["(n: number) =\u003e TResult"]
+                }, {
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "random",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "random",
+                "Args": [{
+                    "Name": "max",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "mixin",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "iteratee",
+                "Args": [{
+                    "Name": "context",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }, {
+                    "Name": "argCount",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "uniqueId",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "escape",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "unescape",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "result",
+                "Args": [{
+                    "Name": "property",
+                    "IsOptional": false,
+                    "Type": ["string"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "template",
+                "Args": [{
+                    "Name": "settings",
+                    "IsOptional": true,
+                    "Type": ["_.TemplateSettings"]
+                }],
+                "ReturnType": ["(...data: any[]) =\u003e _Chain\u003cT\u003e"]
+            }, {
+                "Name": "concat",
+                "Args": [{
+                    "Name": "...arr",
+                    "IsOptional": false,
+                    "Type": ["Array\u003cT[]\u003e"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "join",
+                "Args": [{
+                    "Name": "separator",
+                    "IsOptional": true,
+                    "Type": ["any"]
+                }],
+                "ReturnType": ["_ChainSingle\u003cT\u003e"]
+            }, {
+                "Name": "pop",
+                "Args": null,
+                "ReturnType": ["_ChainSingle\u003cT\u003e"]
+            }, {
+                "Name": "push",
+                "Args": [{
+                    "Name": "...item",
+                    "IsOptional": false,
+                    "Type": ["Array\u003cT\u003e"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "reverse",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "shift",
+                "Args": null,
+                "ReturnType": ["_ChainSingle\u003cT\u003e"]
+            }, {
+                "Name": "slice",
+                "Args": [{
+                    "Name": "start",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "end",
+                    "IsOptional": true,
+                    "Type": ["number"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "sort",
+                "Args": [{
+                    "Name": "compareFn",
+                    "IsOptional": false,
+                    "Type": ["(a: T, b: T) =\u003e boolean"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "splice",
+                "Args": [{
+                    "Name": "index",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "quantity",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "...items",
+                    "IsOptional": false,
+                    "Type": ["Array\u003cT\u003e"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "toString",
+                "Args": null,
+                "ReturnType": ["_ChainSingle\u003cT\u003e"]
+            }, {
+                "Name": "unshift",
+                "Args": [{
+                    "Name": "...items",
+                    "IsOptional": false,
+                    "Type": ["Array\u003cT\u003e"]
+                }],
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "chain",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }, {
+                "Name": "value",
+                "Args": null,
+                "ReturnType": ["T[]"]
+            }]
+        },
+        "_ChainOfArrays\u003cT\u003e ": {
+            "Name": "_ChainOfArrays\u003cT\u003e ",
+            "Kind": "Interface",
+            "Extents": ["_Chain\u003cT[]\u003e"],
+            "Funcs": [{
+                "Name": "flatten",
+                "Args": null,
+                "ReturnType": ["_Chain\u003cT\u003e"]
+            }]
+        },
+        "_ChainSingle\u003cT\u003e ": {
+            "Name": "_ChainSingle\u003cT\u003e ",
+            "Kind": "Interface",
+            "Funcs": [{
+                "Name": "value",
+                "Args": null,
+                "ReturnType": ["T"]
+            }]
+        }
+    },
+    "Modules": {
+        "\"underscore\"": {
+            "Name": "\"underscore\"",
+            "Modifier": ["declare"],
+            "Kind": "Module"
+        },
+        "_": {
+            "Name": "_",
+            "Modifier": ["declare"],
+            "Kind": "Module",
+            "Interfaces": {
+                "Collection\u003cT\u003e ": {
+                    "Name": "Collection\u003cT\u003e ",
+                    "Kind": "Interface"
+                },
+                "Dictionary\u003cT\u003e ": {
+                    "Name": "Dictionary\u003cT\u003e ",
+                    "Kind": "Interface",
+                    "Extents": ["Collection\u003cT\u003e"]
+                },
+                "List\u003cT\u003e ": {
+                    "Name": "List\u003cT\u003e ",
+                    "Kind": "Interface",
+                    "Extents": ["Collection\u003cT\u003e"],
+                    "Vars": {
+                        "length": {
+                            "Name": "length",
+                            "IsOptional": false,
+                            "Type": ["number"]
+                        }
+                    }
+                },
+                "ListIterator\u003cT, TResult\u003e ": {
+                    "Name": "ListIterator\u003cT, TResult\u003e ",
+                    "Kind": "Interface"
+                },
+                "MemoIterator\u003cT, TResult\u003e ": {
+                    "Name": "MemoIterator\u003cT, TResult\u003e ",
+                    "Kind": "Interface"
+                },
+                "MemoObjectIterator\u003cT, TResult\u003e ": {
+                    "Name": "MemoObjectIterator\u003cT, TResult\u003e ",
+                    "Kind": "Interface"
+                },
+                "ObjectIterator\u003cT, TResult\u003e ": {
+                    "Name": "ObjectIterator\u003cT, TResult\u003e ",
+                    "Kind": "Interface"
+                },
+                "TemplateSettings": {
+                    "Name": "TemplateSettings",
+                    "Kind": "Interface",
+                    "Vars": {
+                        "escape": {
+                            "Name": "escape",
+                            "IsOptional": true,
+                            "Type": ["RegExp"]
+                        },
+                        "evaluate": {
+                            "Name": "evaluate",
+                            "IsOptional": true,
+                            "Type": ["RegExp"]
+                        },
+                        "interpolate": {
+                            "Name": "interpolate",
+                            "IsOptional": true,
+                            "Type": ["RegExp"]
+                        }
+                    }
+                },
+                "ThrottleSettings": {
+                    "Name": "ThrottleSettings",
+                    "Kind": "Interface",
+                    "Vars": {
+                        "leading": {
+                            "Name": "leading",
+                            "IsOptional": true,
+                            "Type": ["boolean"]
+                        },
+                        "trailing": {
+                            "Name": "trailing",
+                            "IsOptional": true,
+                            "Type": ["boolean"]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

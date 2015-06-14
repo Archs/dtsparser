@@ -1,0 +1,422 @@
+{
+    "Name": "sample.d.ts",
+    "Kind": "TopLevel",
+    "Vars": {
+        "__filename": {
+            "Name": "__filename",
+            "Modifier": ["declare", "var"],
+            "IsOptional": false,
+            "Type": ["string"]
+        },
+        "process": {
+            "Name": "process",
+            "Modifier": ["declare", "var"],
+            "IsOptional": false,
+            "Type": ["NodeJS.Process"]
+        }
+    },
+    "Funcs": [{
+        "Name": "setTimeout",
+        "Modifier": ["declare", "function"],
+        "Args": [{
+            "Name": "callback",
+            "IsOptional": false,
+            "Type": ["(...args: any[]) =\u003e void"]
+        }, {
+            "Name": "ms",
+            "IsOptional": false,
+            "Type": ["number"]
+        }, {
+            "Name": "...args",
+            "IsOptional": false,
+            "Type": ["any[]"]
+        }],
+        "ReturnType": ["NodeJS.Timer"]
+    }, {
+        "Name": "clearTimeout",
+        "Modifier": ["declare", "function"],
+        "Args": [{
+            "Name": "timeoutId",
+            "IsOptional": false,
+            "Type": ["NodeJS.Timer"]
+        }],
+        "ReturnType": ["void"]
+    }],
+    "Classes": {
+        "PIXI": {
+            "Name": "PIXI",
+            "Modifier": ["declare"],
+            "Kind": "Class",
+            "Vars": {
+                "TARGET_FPMS": {
+                    "Name": "TARGET_FPMS",
+                    "Modifier": ["static"],
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }
+            },
+            "Funcs": [{
+                "Name": "autoDetectRenderer",
+                "Modifier": ["static"],
+                "Args": [{
+                    "Name": "width",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "height",
+                    "IsOptional": false,
+                    "Type": ["number"]
+                }, {
+                    "Name": "options",
+                    "IsOptional": true,
+                    "Type": ["PIXI.RendererOptions"]
+                }, {
+                    "Name": "noWebGL",
+                    "IsOptional": true,
+                    "Type": ["boolean"]
+                }],
+                "ReturnType": ["PIXI.WebGLRenderer", "PIXI.CanvasRenderer"]
+            }]
+        }
+    },
+    "Modules": {
+        "\"events\"": {
+            "Name": "\"events\"",
+            "Modifier": ["declare"],
+            "Kind": "Module",
+            "Classes": {
+                "EventEmitter": {
+                    "Name": "EventEmitter",
+                    "Modifier": ["export"],
+                    "Kind": "Class",
+                    "Implements": ["NodeJS.EventEmitter"],
+                    "Funcs": [{
+                        "Name": "listenerCount",
+                        "Modifier": ["static"],
+                        "Args": [{
+                            "Name": "emitter",
+                            "IsOptional": false,
+                            "Type": ["EventEmitter"]
+                        }, {
+                            "Name": "event",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }],
+                        "ReturnType": ["number"]
+                    }, {
+                        "Name": "addListener",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "listener",
+                            "IsOptional": false,
+                            "Type": ["Function"]
+                        }],
+                        "ReturnType": ["EventEmitter"]
+                    }, {
+                        "Name": "on",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "listener",
+                            "IsOptional": false,
+                            "Type": ["Function"]
+                        }],
+                        "ReturnType": ["EventEmitter"]
+                    }, {
+                        "Name": "once",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "listener",
+                            "IsOptional": false,
+                            "Type": ["Function"]
+                        }],
+                        "ReturnType": ["EventEmitter"]
+                    }, {
+                        "Name": "removeListener",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "listener",
+                            "IsOptional": false,
+                            "Type": ["Function"]
+                        }],
+                        "ReturnType": ["EventEmitter"]
+                    }, {
+                        "Name": "removeAllListeners",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": true,
+                            "Type": ["string"]
+                        }],
+                        "ReturnType": ["EventEmitter"]
+                    }, {
+                        "Name": "setMaxListeners",
+                        "Args": [{
+                            "Name": "n",
+                            "IsOptional": false,
+                            "Type": ["number"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "listeners",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }],
+                        "ReturnType": ["Function[]"]
+                    }, {
+                        "Name": "emit",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "...args",
+                            "IsOptional": false,
+                            "Type": ["any[]"]
+                        }],
+                        "ReturnType": ["boolean"]
+                    }]
+                }
+            }
+        },
+        "NodeJS": {
+            "Name": "NodeJS",
+            "Modifier": ["declare"],
+            "Kind": "Module",
+            "Interfaces": {
+                "ErrnoException": {
+                    "Name": "ErrnoException",
+                    "Modifier": ["export"],
+                    "Kind": "Interface",
+                    "Extents": ["Error"],
+                    "Vars": {
+                        "code": {
+                            "Name": "code",
+                            "IsOptional": true,
+                            "Type": ["string"]
+                        },
+                        "errno": {
+                            "Name": "errno",
+                            "IsOptional": true,
+                            "Type": ["number"]
+                        },
+                        "path": {
+                            "Name": "path",
+                            "IsOptional": true,
+                            "Type": ["string"]
+                        },
+                        "syscall": {
+                            "Name": "syscall",
+                            "IsOptional": true,
+                            "Type": ["string"]
+                        }
+                    }
+                },
+                "EventEmitter": {
+                    "Name": "EventEmitter",
+                    "Modifier": ["export"],
+                    "Kind": "Interface",
+                    "Funcs": [{
+                        "Name": "addListener",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "listener",
+                            "IsOptional": false,
+                            "Type": ["Function"]
+                        }],
+                        "ReturnType": ["EventEmitter"]
+                    }, {
+                        "Name": "on",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "listener",
+                            "IsOptional": false,
+                            "Type": ["Function"]
+                        }],
+                        "ReturnType": ["EventEmitter"]
+                    }, {
+                        "Name": "once",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "listener",
+                            "IsOptional": false,
+                            "Type": ["Function"]
+                        }],
+                        "ReturnType": ["EventEmitter"]
+                    }, {
+                        "Name": "removeListener",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "listener",
+                            "IsOptional": false,
+                            "Type": ["Function"]
+                        }],
+                        "ReturnType": ["EventEmitter"]
+                    }, {
+                        "Name": "removeAllListeners",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": true,
+                            "Type": ["string"]
+                        }],
+                        "ReturnType": ["EventEmitter"]
+                    }, {
+                        "Name": "setMaxListeners",
+                        "Args": [{
+                            "Name": "n",
+                            "IsOptional": false,
+                            "Type": ["number"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "listeners",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }],
+                        "ReturnType": ["Function[]"]
+                    }, {
+                        "Name": "emit",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "...args",
+                            "IsOptional": false,
+                            "Type": ["any[]"]
+                        }],
+                        "ReturnType": ["boolean"]
+                    }]
+                }
+            },
+            "Modules": {
+                "\"vm\"": {
+                    "Name": "\"vm\"",
+                    "Modifier": ["declare"],
+                    "Kind": "Module",
+                    "Funcs": [{
+                        "Name": "runInThisContext",
+                        "Modifier": ["export", "function"],
+                        "Args": [{
+                            "Name": "code",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "filename",
+                            "IsOptional": true,
+                            "Type": ["string"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "runInNewContext",
+                        "Modifier": ["export", "function"],
+                        "Args": [{
+                            "Name": "code",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "sandbox",
+                            "IsOptional": true,
+                            "Type": ["Context"]
+                        }, {
+                            "Name": "filename",
+                            "IsOptional": true,
+                            "Type": ["string"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "runInContext",
+                        "Modifier": ["export", "function"],
+                        "Args": [{
+                            "Name": "code",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "context",
+                            "IsOptional": false,
+                            "Type": ["Context"]
+                        }, {
+                            "Name": "filename",
+                            "IsOptional": true,
+                            "Type": ["string"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "createContext",
+                        "Modifier": ["export", "function"],
+                        "Args": [{
+                            "Name": "initSandbox",
+                            "IsOptional": true,
+                            "Type": ["Context"]
+                        }],
+                        "ReturnType": ["Context"]
+                    }, {
+                        "Name": "createScript",
+                        "Modifier": ["export", "function"],
+                        "Args": [{
+                            "Name": "code",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "filename",
+                            "IsOptional": true,
+                            "Type": ["string"]
+                        }],
+                        "ReturnType": ["Script"]
+                    }],
+                    "Interfaces": {
+                        "Context": {
+                            "Name": "Context",
+                            "Modifier": ["export"],
+                            "Kind": "Interface"
+                        },
+                        "Script": {
+                            "Name": "Script",
+                            "Modifier": ["export"],
+                            "Kind": "Interface",
+                            "Funcs": [{
+                                "Name": "runInThisContext",
+                                "Args": null,
+                                "ReturnType": ["void"]
+                            }, {
+                                "Name": "runInNewContext",
+                                "Args": [{
+                                    "Name": "sandbox",
+                                    "IsOptional": true,
+                                    "Type": ["Context"]
+                                }],
+                                "ReturnType": ["void"]
+                            }]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

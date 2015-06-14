@@ -1,0 +1,596 @@
+{
+    "Name": "vue.d.ts",
+    "Kind": "TopLevel",
+    "Modules": {
+        "\"vue\"": {
+            "Name": "\"vue\"",
+            "Modifier": ["declare"],
+            "Kind": "Module"
+        },
+        "vuejs": {
+            "Name": "vuejs",
+            "Modifier": ["declare"],
+            "Kind": "Module",
+            "Classes": {
+                "Vue": {
+                    "Name": "Vue",
+                    "Modifier": ["export"],
+                    "Kind": "Class",
+                    "Vars": {
+                        "$el": {
+                            "Name": "$el",
+                            "IsOptional": false,
+                            "Type": ["HTMLElement"]
+                        },
+                        "$parent": {
+                            "Name": "$parent",
+                            "IsOptional": false,
+                            "Type": ["Vue"]
+                        },
+                        "$root": {
+                            "Name": "$root",
+                            "IsOptional": false,
+                            "Type": ["Vue"]
+                        },
+                        "attached": {
+                            "Name": "attached",
+                            "IsOptional": false,
+                            "Type": ["VueCallback"]
+                        },
+                        "beforeCompile": {
+                            "Name": "beforeCompile",
+                            "IsOptional": false,
+                            "Type": ["VueCallback"]
+                        },
+                        "beforeDestroy": {
+                            "Name": "beforeDestroy",
+                            "IsOptional": false,
+                            "Type": ["VueCallback"]
+                        },
+                        "compiled": {
+                            "Name": "compiled",
+                            "IsOptional": false,
+                            "Type": ["VueCallback"]
+                        },
+                        "config": {
+                            "Name": "config",
+                            "Modifier": ["static"],
+                            "IsOptional": false,
+                            "Type": ["VueConfig"]
+                        },
+                        "created": {
+                            "Name": "created",
+                            "IsOptional": false,
+                            "Type": ["VueCallback"]
+                        },
+                        "destroyed": {
+                            "Name": "destroyed",
+                            "IsOptional": false,
+                            "Type": ["VueCallback"]
+                        },
+                        "detached": {
+                            "Name": "detached",
+                            "IsOptional": false,
+                            "Type": ["VueCallback"]
+                        },
+                        "inherit": {
+                            "Name": "inherit",
+                            "IsOptional": false,
+                            "Type": ["boolean"]
+                        },
+                        "name": {
+                            "Name": "name",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        },
+                        "ready": {
+                            "Name": "ready",
+                            "IsOptional": false,
+                            "Type": ["VueCallback"]
+                        },
+                        "replace": {
+                            "Name": "replace",
+                            "IsOptional": false,
+                            "Type": ["boolean"]
+                        },
+                        "template": {
+                            "Name": "template",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }
+                    },
+                    "Funcs": [{
+                        "Name": "constructor",
+                        "Args": [{
+                            "Name": "options",
+                            "IsOptional": true,
+                            "Type": ["{}"]
+                        }],
+                        "ReturnType": ["options?: {}"]
+                    }, {
+                        "Name": "$watch",
+                        "Args": [{
+                            "Name": "expression",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "callback",
+                            "IsOptional": false,
+                            "Type": ["ValueCallback"]
+                        }, {
+                            "Name": "deep",
+                            "IsOptional": true,
+                            "Type": ["boolean"]
+                        }, {
+                            "Name": "immediate",
+                            "IsOptional": true,
+                            "Type": ["boolean"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "$get",
+                        "Args": [{
+                            "Name": "expression",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }],
+                        "ReturnType": ["any"]
+                    }, {
+                        "Name": "$set",
+                        "Args": [{
+                            "Name": "keypath",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "value",
+                            "IsOptional": false,
+                            "Type": ["any"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "$add",
+                        "Args": [{
+                            "Name": "keypath",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "value",
+                            "IsOptional": false,
+                            "Type": ["any"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "$delete",
+                        "Args": [{
+                            "Name": "keypath",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "$eval",
+                        "Args": [{
+                            "Name": "expression",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }],
+                        "ReturnType": ["any"]
+                    }, {
+                        "Name": "$interpolate",
+                        "Args": [{
+                            "Name": "templateString",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }],
+                        "ReturnType": ["string"]
+                    }, {
+                        "Name": "$log",
+                        "Args": [{
+                            "Name": "keypath",
+                            "IsOptional": true,
+                            "Type": ["string"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "$dispatch",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "...args",
+                            "IsOptional": false,
+                            "Type": ["any[]"]
+                        }],
+                        "ReturnType": ["Vue"]
+                    }, {
+                        "Name": "$broadcast",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "...args",
+                            "IsOptional": false,
+                            "Type": ["any[]"]
+                        }],
+                        "ReturnType": ["Vue"]
+                    }, {
+                        "Name": "$emit",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "...args",
+                            "IsOptional": false,
+                            "Type": ["any[]"]
+                        }],
+                        "ReturnType": ["Vue"]
+                    }, {
+                        "Name": "$on",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "callback",
+                            "IsOptional": false,
+                            "Type": ["Function"]
+                        }],
+                        "ReturnType": ["Vue"]
+                    }, {
+                        "Name": "$once",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "callback",
+                            "IsOptional": false,
+                            "Type": ["Function"]
+                        }],
+                        "ReturnType": ["Vue"]
+                    }, {
+                        "Name": "$off",
+                        "Args": [{
+                            "Name": "event",
+                            "IsOptional": true,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "callback",
+                            "IsOptional": true,
+                            "Type": ["Function"]
+                        }],
+                        "ReturnType": ["Vue"]
+                    }, {
+                        "Name": "$appendTo",
+                        "Args": [{
+                            "Name": "element",
+                            "IsOptional": false,
+                            "Type": ["any"]
+                        }, {
+                            "Name": "callback",
+                            "IsOptional": true,
+                            "Type": ["Function"]
+                        }],
+                        "ReturnType": ["Vue"]
+                    }, {
+                        "Name": "$prependTo",
+                        "Args": [{
+                            "Name": "element",
+                            "IsOptional": false,
+                            "Type": ["any"]
+                        }, {
+                            "Name": "callback",
+                            "IsOptional": true,
+                            "Type": ["Function"]
+                        }],
+                        "ReturnType": ["Vue"]
+                    }, {
+                        "Name": "$before",
+                        "Args": [{
+                            "Name": "element",
+                            "IsOptional": false,
+                            "Type": ["any"]
+                        }, {
+                            "Name": "callback",
+                            "IsOptional": true,
+                            "Type": ["Function"]
+                        }],
+                        "ReturnType": ["Vue"]
+                    }, {
+                        "Name": "$after",
+                        "Args": [{
+                            "Name": "element",
+                            "IsOptional": false,
+                            "Type": ["any"]
+                        }, {
+                            "Name": "callback",
+                            "IsOptional": true,
+                            "Type": ["Function"]
+                        }],
+                        "ReturnType": ["Vue"]
+                    }, {
+                        "Name": "$remove",
+                        "Args": [{
+                            "Name": "callback",
+                            "IsOptional": true,
+                            "Type": ["Function"]
+                        }],
+                        "ReturnType": ["Vue"]
+                    }, {
+                        "Name": "$mount",
+                        "Args": [{
+                            "Name": "element",
+                            "IsOptional": true,
+                            "Type": ["any"]
+                        }],
+                        "ReturnType": ["Vue"]
+                    }, {
+                        "Name": "$destroy",
+                        "Args": [{
+                            "Name": "remove",
+                            "IsOptional": true,
+                            "Type": ["boolean"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "$compile",
+                        "Args": [{
+                            "Name": "element",
+                            "IsOptional": false,
+                            "Type": ["HTMLElement"]
+                        }],
+                        "ReturnType": ["VueCallback"]
+                    }, {
+                        "Name": "$addChild",
+                        "Args": [{
+                            "Name": "options",
+                            "IsOptional": true,
+                            "Type": ["{}"]
+                        }, {
+                            "Name": "constructor",
+                            "IsOptional": true,
+                            "Type": ["Function"]
+                        }],
+                        "ReturnType": ["Vue"]
+                    }, {
+                        "Name": "extend",
+                        "Modifier": ["static"],
+                        "Args": [{
+                            "Name": "options",
+                            "IsOptional": false,
+                            "Type": ["{}"]
+                        }],
+                        "ReturnType": ["Vue"]
+                    }, {
+                        "Name": "directive",
+                        "Modifier": ["static"],
+                        "Args": [{
+                            "Name": "id",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "definition",
+                            "IsOptional": true,
+                            "Type": ["{}"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "directive",
+                        "Modifier": ["static"],
+                        "Args": [{
+                            "Name": "id",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "definition",
+                            "IsOptional": true,
+                            "Type": ["VueCallback"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "filter",
+                        "Modifier": ["static"],
+                        "Args": [{
+                            "Name": "id",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "definition",
+                            "IsOptional": true,
+                            "Type": ["FilterCallback"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "component",
+                        "Modifier": ["static"],
+                        "Args": [{
+                            "Name": "id",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "definition",
+                            "IsOptional": false,
+                            "Type": ["Vue"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "component",
+                        "Modifier": ["static"],
+                        "Args": [{
+                            "Name": "id",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "definition",
+                            "IsOptional": true,
+                            "Type": ["{}"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "transition",
+                        "Modifier": ["static"],
+                        "Args": [{
+                            "Name": "id",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "definition",
+                            "IsOptional": true,
+                            "Type": ["{}"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "partial",
+                        "Modifier": ["static"],
+                        "Args": [{
+                            "Name": "id",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "definition",
+                            "IsOptional": true,
+                            "Type": ["string"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "partial",
+                        "Modifier": ["static"],
+                        "Args": [{
+                            "Name": "id",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }, {
+                            "Name": "definition",
+                            "IsOptional": true,
+                            "Type": ["HTMLElement"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "nextTick",
+                        "Modifier": ["static"],
+                        "Args": [{
+                            "Name": "callback",
+                            "IsOptional": false,
+                            "Type": ["VueCallback"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "require",
+                        "Modifier": ["static"],
+                        "Args": [{
+                            "Name": "module",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "use",
+                        "Modifier": ["static"],
+                        "Args": [{
+                            "Name": "plugin",
+                            "IsOptional": false,
+                            "Type": ["{}"]
+                        }, {
+                            "Name": "...args",
+                            "IsOptional": false,
+                            "Type": ["any[]"]
+                        }],
+                        "ReturnType": ["Vue"]
+                    }, {
+                        "Name": "use",
+                        "Modifier": ["static"],
+                        "Args": [{
+                            "Name": "plugin",
+                            "IsOptional": false,
+                            "Type": ["VueCallback"]
+                        }, {
+                            "Name": "...args",
+                            "IsOptional": false,
+                            "Type": ["any[]"]
+                        }],
+                        "ReturnType": ["Vue"]
+                    }, {
+                        "Name": "_init",
+                        "Args": [{
+                            "Name": "options",
+                            "IsOptional": false,
+                            "Type": ["{}"]
+                        }],
+                        "ReturnType": ["void"]
+                    }, {
+                        "Name": "_cleanup",
+                        "Args": null,
+                        "ReturnType": ["void"]
+                    }],
+                    "Constructor": {
+                        "Name": "constructor",
+                        "Args": [{
+                            "Name": "options",
+                            "IsOptional": true,
+                            "Type": ["{}"]
+                        }],
+                        "ReturnType": ["options?: {}"]
+                    }
+                },
+                "VueConfig": {
+                    "Name": "VueConfig",
+                    "Kind": "Class",
+                    "Vars": {
+                        "async": {
+                            "Name": "async",
+                            "IsOptional": false,
+                            "Type": ["boolean"]
+                        },
+                        "debug": {
+                            "Name": "debug",
+                            "IsOptional": false,
+                            "Type": ["boolean"]
+                        },
+                        "delimiters": {
+                            "Name": "delimiters",
+                            "IsOptional": false,
+                            "Type": ["string[]"]
+                        },
+                        "interpolate": {
+                            "Name": "interpolate",
+                            "IsOptional": false,
+                            "Type": ["boolean"]
+                        },
+                        "prefix": {
+                            "Name": "prefix",
+                            "IsOptional": false,
+                            "Type": ["string"]
+                        },
+                        "proto": {
+                            "Name": "proto",
+                            "IsOptional": false,
+                            "Type": ["boolean"]
+                        },
+                        "silent": {
+                            "Name": "silent",
+                            "IsOptional": false,
+                            "Type": ["boolean"]
+                        }
+                    }
+                }
+            },
+            "Interfaces": {
+                "FilterCallback": {
+                    "Name": "FilterCallback",
+                    "Kind": "Interface"
+                },
+                "ValueCallback": {
+                    "Name": "ValueCallback",
+                    "Kind": "Interface"
+                },
+                "VueCallback": {
+                    "Name": "VueCallback",
+                    "Kind": "Interface"
+                }
+            }
+        }
+    }
+}
