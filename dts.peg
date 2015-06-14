@@ -86,7 +86,7 @@ EnumBody
 	   block_end
 
 ObjDeclaration
-	<- ObjModifier ObjIdentifier hasType ObjBody end { p.EndBlock("obj") }
+	<- ObjModifier ObjIdentifier hasType ObjBody (space '[]')* end { p.EndBlock("obj") }
 
 ObjModifier
 	<- <modifier?>  { p.NewBlock(text, "Obj") }
@@ -96,7 +96,10 @@ ObjIdentifier
 
 ObjBody
 	<- block_start
-			(ObjDeclaration / FuncDeclaration / VariableDeclaration / (FuncType end))*
+			(ObjDeclaration 
+			/ FuncDeclaration 
+			/ VariableDeclaration 
+			/ (FuncType end))*
 	   block_end
 
 AssignmentDeclaration
