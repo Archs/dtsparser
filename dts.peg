@@ -96,7 +96,7 @@ ObjIdentifier
 
 ObjBody
 	<- block_start
-			(ObjDeclaration / VariableDeclaration / (FuncType end))*
+			(ObjDeclaration / FuncDeclaration / VariableDeclaration / (FuncType end))*
 	   block_end
 
 AssignmentDeclaration
