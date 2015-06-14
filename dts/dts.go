@@ -15,7 +15,7 @@ const (
 	Class          = "Class"
 	Interface      = "Interface"
 	Enum           = "Enum"
-	Obj            = "Obj"
+	Obj            = "Object"
 )
 
 var (
@@ -100,7 +100,7 @@ type Object struct {
 	Interfaces map[string]*Object `json:",omitempty"`
 	Modules    map[string]*Object `json:",omitempty"`
 	Enums      map[string]*Object `json:",omitempty"`
-	Objs       map[string]*Object `json:",omitempty"`
+	Objects    map[string]*Object `json:",omitempty"`
 }
 
 type DTS struct {
@@ -180,10 +180,10 @@ func (d *DTS) SetBlockID(name string) {
 		}
 		parent.Enums[o.Name] = o
 	case Obj:
-		if parent.Objs == nil {
-			parent.Objs = make(map[string]*Object)
+		if parent.Objects == nil {
+			parent.Objects = make(map[string]*Object)
 		}
-		parent.Objs[o.Name] = o
+		parent.Objects[o.Name] = o
 	}
 }
 
