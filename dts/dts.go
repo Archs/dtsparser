@@ -26,7 +26,7 @@ var (
 
 type Identifier struct {
 	Name     string
-	Modifier []string
+	Modifier []string `json:",omitempty"`
 	// text holding the ide
 	Text string `json:"-"`
 }
@@ -81,23 +81,24 @@ type Object struct {
 	Kind Kind
 
 	// for class/interface/object
-	Extents    []string // ids
-	Implements []string // ids
+	Extents    []string `json:",omitempty"` // ids
+	Implements []string `json:",omitempty"` // ids
 	// var difinitions
-	Vars        map[string]*Variable
-	Assignments map[string]*Assignment
+	Vars        map[string]*Variable   `json:",omitempty"`
+	Assignments map[string]*Assignment `json:",omitempty"`
 	// using slice here, incase of function override
-	Funcs []*Function
+	Funcs []*Function `json:",omitempty"`
 	// helpers
 	// constructor for class
-	Constructor *Function
+	Constructor *Function `json:",omitempty"`
 
 	// for module/class/interface
 	parent     *Object
-	Classes    map[string]*Object
-	Interfaces map[string]*Object
-	Modules    map[string]*Object
-	Enums      map[string]*Object
+	Classes    map[string]*Object `json:",omitempty"`
+	Interfaces map[string]*Object `json:",omitempty"`
+	Modules    map[string]*Object `json:",omitempty"`
+	Enums      map[string]*Object `json:",omitempty"`
+	Objs       map[string]*Object `json:",omitempty"`
 }
 
 type DTS struct {
@@ -120,12 +121,13 @@ func (d *DTS) Init(fpath string) {
 	d.current = &d.Object
 }
 
-func (d *DTS) newObject(kind Kind, name string) *Object {
+func (d *DTS) NewBlock(modifiers string, kind Kind) {
 	// create the object
 	o := &Object{
 		Kind: kind,
 	}
-	o.Identifier.Name = name
+	modifiers = strings.TrimSpace(modifiers)
+	o.Modifier = space.Split(modifiers, -1)
 	// set parent
 	if d.current != nil {
 		o.parent = d.current
@@ -133,47 +135,41 @@ func (d *DTS) newObject(kind Kind, name string) *Object {
 		// toplevel
 		o.parent = &d.Object
 	}
-	// add to mapping
-	switch kind {
-	case Module:
-		if d.Modules == nil {
-			d.Modules = make(map[string]*Object)
-		}
-		d.Modules[o.Name] = o
-	case Class:
-		if d.Classes == nil {
-			d.Classes = make(map[string]*Object)
-		}
-		d.Classes[o.Name] = o
-	case Interface:
-		if d.Interfaces == nil {
-			d.Interfaces = make(map[string]*Object)
-		}
-		d.Interfaces[o.Name] = o
-	case Enum:
-		if d.Enums == nil {
-			d.Enums = make(map[string]*Object)
-		}
-		d.Enums[o.Name] = o
-	}
 	d.current = o
-	return o
 }
 
-func (d *DTS) NewModule(text string) {
-	d.newObject(Module, text)
-}
-
-func (d *DTS) NewClass(text string) {
-	d.newObject(Class, text)
-}
-
-func (d *DTS) NewInterface(text string) {
-	d.newObject(Interface, text)
-}
-
-func (d *DTS) NewEnum(text string) {
-	d.newObject(Enum, text)
+func (d *DTS) SetBlockID(name string) {
+	o := d.current
+	parent := o.parent
+	o.Name = name
+	// add to mapping
+	switch o.Kind {
+	case Module:
+		if parent.Modules == nil {
+			parent.Modules = make(map[string]*Object)
+		}
+		parent.Modules[o.Name] = o
+	case Class:
+		if parent.Classes == nil {
+			parent.Classes = make(map[string]*Object)
+		}
+		parent.Classes[o.Name] = o
+	case Interface:
+		if parent.Interfaces == nil {
+			parent.Interfaces = make(map[string]*Object)
+		}
+		parent.Interfaces[o.Name] = o
+	case Enum:
+		if parent.Enums == nil {
+			parent.Enums = make(map[string]*Object)
+		}
+		parent.Enums[o.Name] = o
+	case Obj:
+		if parent.Objs == nil {
+			parent.Objs = make(map[string]*Object)
+		}
+		parent.Objs[o.Name] = o
+	}
 }
 
 func (d *DTS) Extends(text string) {
@@ -190,6 +186,7 @@ func (d *DTS) EndBlock(msg string) {
 
 func (d *DTS) NewVariable(text string) {
 	d.v = new(Variable)
+	text = strings.TrimSpace(text)
 	d.v.Modifier = space.Split(text, -1)
 }
 
@@ -216,6 +213,7 @@ func (d *DTS) EndVariable(text string) {
 
 func (d *DTS) NewFunction(text string) {
 	d.f = new(Function)
+	text = strings.TrimSpace(text)
 	d.f.Modifier = space.Split(text, -1)
 }
 
@@ -229,6 +227,7 @@ func (d *DTS) FSetType(text string) {
 
 func (d *DTS) NewArg(text string) {
 	d.v = new(Variable)
+	text = strings.TrimSpace(text)
 	if strings.HasSuffix(text, "?") {
 		d.v.IsOptional = true
 		text = text[:len(text)-1]

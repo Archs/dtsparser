@@ -11,15 +11,19 @@ start
 	          / ClassDeclaration 
 	          / InterfaceDeclaration
 	          / EnumDeclaration
+	          / ObjDeclaration
 	          / AssignmentDeclaration
 	          / VariableDeclaration
 	          / FuncDeclaration )+ eof
 
 ModuleDeclaration
-	<- modifier? ModuleIdentifier ModuleBody { p.EndBlock("module") }
+	<- ModuleModifier ModuleIdentifier ModuleBody { p.EndBlock("module") }
+
+ModuleModifier
+	<- <modifier?>  { p.NewBlock(text, "Module") }
 
 ModuleIdentifier
-	<- 'module' space <fakeIdentifier> { p.NewModule(text) }
+	<- 'module' space <fakeIdentifier> { p.SetBlockID(text) }
 
 ModuleBody
 	<- block_start 
@@ -27,45 +31,72 @@ ModuleBody
 		   	/ InterfaceDeclaration
 		   	/ ModuleDeclaration
 		   	/ EnumDeclaration
+			/ ObjDeclaration
 			/ VariableDeclaration
 			/ FuncDeclaration
 			/ AssignmentDeclaration)*
 	   block_end
 
 ClassDeclaration
-	<- modifier? ClassIdentifier ExtendClause? ImplementClause? ClassBody { p.EndBlock("class") }
+	<- ClassModifier ClassIdentifier ExtendClause? ImplementClause? ClassBody 
+	   { p.EndBlock("class") }
+
+ClassModifier
+	<- <modifier?>  { p.NewBlock(text, "Class") }
 
 ClassIdentifier
-	<- 'class' space <GenericIdentifier> { p.NewClass(text) }
+	<- 'class' space <GenericIdentifier> { p.SetBlockID(text) }
 
 ClassBody
 	<- block_start
-			(VariableDeclaration / FuncDeclaration)* 
+			(ObjDeclaration / VariableDeclaration / FuncDeclaration)* 
 	   block_end
 
 InterfaceDeclaration
-	<- modifier? InterfaceIdentifier ExtendClause? InterfaceBody { p.EndBlock("interface") }
+	<- InterfaceModifier InterfaceIdentifier ExtendClause? InterfaceBody 
+	   { p.EndBlock("interface") }
+
+InterfaceModifier
+	<- <modifier?>  { p.NewBlock(text, "Interface") }
 
 InterfaceIdentifier
-	<- 'interface' space <GenericIdentifier> { p.NewInterface(text) }
+	<- 'interface' space <GenericIdentifier> { p.SetBlockID(text) }
 
 InterfaceBody
 	<- block_start
-			(VariableDeclaration 
+			(ObjDeclaration
+			 / VariableDeclaration 
 			 / FuncDeclaration 
 			 / (FuncType end)
 			 / IndexDeclaration)* 
 	   block_end
 
 EnumDeclaration
-	<- modifier? EnumIdentifier EnumBody { p.EndBlock("enum") }
+	<- EnumModifier EnumIdentifier EnumBody { p.EndBlock("enum") }
+
+EnumModifier
+	<- <modifier?>  { p.NewBlock(text, "Enum") }
 
 EnumIdentifier
-	<- 'enum' space <Identifier> { p.NewEnum(text) }
+	<- 'enum' space <Identifier> { p.SetBlockID(text) }
 
 EnumBody
 	<- block_start
 			AssignmentDifinition (and AssignmentDifinition)*
+	   block_end
+
+ObjDeclaration
+	<- ObjModifier ObjIdentifier hasType ObjBody end { p.EndBlock("obj") }
+
+ObjModifier
+	<- <modifier?>  { p.NewBlock(text, "Obj") }
+
+ObjIdentifier
+	<- <Identifier> { p.SetBlockID(text) }
+
+ObjBody
+	<- block_start
+			(ObjDeclaration / VariableDeclaration / (FuncType end))*
 	   block_end
 
 AssignmentDeclaration
