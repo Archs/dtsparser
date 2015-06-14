@@ -22,6 +22,8 @@ var (
 	// modifiers = "declare|export|private|static|import|var|function"
 	modifiers = regexp.MustCompile("declare|export|private|static|import|var|function")
 	space     = regexp.MustCompile("[ \r\n\t]+")
+	or        = regexp.MustCompile("\\|")
+	and       = regexp.MustCompile(",")
 )
 
 type Identifier struct {
@@ -121,13 +123,26 @@ func (d *DTS) Init(fpath string) {
 	d.current = &d.Object
 }
 
+func sepBy(text string, exp *regexp.Regexp) []string {
+	text = strings.TrimSpace(text)
+	ret := []string{}
+	ss := exp.Split(text, -1)
+	for _, s := range ss {
+		s = strings.TrimSpace(s)
+		if s != "" {
+			ret = append(ret, s)
+		}
+	}
+	return ret
+}
+
 func (d *DTS) NewBlock(modifiers string, kind Kind) {
 	// create the object
 	o := &Object{
 		Kind: kind,
 	}
 	modifiers = strings.TrimSpace(modifiers)
-	o.Modifier = space.Split(modifiers, -1)
+	o.Modifier = sepBy(modifiers, space)
 	// set parent
 	if d.current != nil {
 		o.parent = d.current
@@ -173,11 +188,11 @@ func (d *DTS) SetBlockID(name string) {
 }
 
 func (d *DTS) Extends(text string) {
-	d.current.Extents = strings.Split(text, ",")
+	d.current.Extents = sepBy(text, and)
 }
 
 func (d *DTS) Implements(text string) {
-	d.current.Implements = strings.Split(text, ",")
+	d.current.Implements = sepBy(text, and)
 }
 
 func (d *DTS) EndBlock(msg string) {
@@ -187,7 +202,7 @@ func (d *DTS) EndBlock(msg string) {
 func (d *DTS) NewVariable(text string) {
 	d.v = new(Variable)
 	text = strings.TrimSpace(text)
-	d.v.Modifier = space.Split(text, -1)
+	d.v.Modifier = sepBy(text, space)
 }
 
 func (d *DTS) VSetIdentifier(text string) {
@@ -199,7 +214,7 @@ func (d *DTS) VSetIdentifier(text string) {
 }
 
 func (d *DTS) VSetType(text string) {
-	d.v.Type = strings.Split(text, "|")
+	d.v.Type = sepBy(text, or)
 }
 
 func (d *DTS) EndVariable(text string) {
@@ -213,8 +228,7 @@ func (d *DTS) EndVariable(text string) {
 
 func (d *DTS) NewFunction(text string) {
 	d.f = new(Function)
-	text = strings.TrimSpace(text)
-	d.f.Modifier = space.Split(text, -1)
+	d.f.Modifier = sepBy(text, space)
 }
 
 func (d *DTS) FSetIdentifier(text string) {
@@ -222,7 +236,7 @@ func (d *DTS) FSetIdentifier(text string) {
 }
 
 func (d *DTS) FSetType(text string) {
-	d.f.ReturnType = strings.Split(text, "|")
+	d.f.ReturnType = sepBy(text, or)
 }
 
 func (d *DTS) NewArg(text string) {
