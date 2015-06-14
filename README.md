@@ -18,3 +18,5 @@ Json would be output to stdout.
 3. BOM is not supported
     
     if parsing not pass, try saving the file without UTF8 BOM first
+
+4. Anonymouse function in Object/Interface are not processed

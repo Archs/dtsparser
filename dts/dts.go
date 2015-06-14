@@ -206,6 +206,7 @@ func (d *DTS) NewVariable(text string) {
 }
 
 func (d *DTS) VSetIdentifier(text string) {
+	// println("var:", text)
 	if strings.HasSuffix(text, "?") {
 		d.v.IsOptional = true
 		text = text[:len(text)-1]
@@ -214,6 +215,7 @@ func (d *DTS) VSetIdentifier(text string) {
 }
 
 func (d *DTS) VSetType(text string) {
+	// println("VSetType:", text)
 	d.v.Type = sepBy(text, or)
 }
 
@@ -232,6 +234,7 @@ func (d *DTS) NewFunction(text string) {
 }
 
 func (d *DTS) FSetIdentifier(text string) {
+	// println("func:", text)
 	d.f.Name = text
 }
 
@@ -240,6 +243,7 @@ func (d *DTS) FSetType(text string) {
 }
 
 func (d *DTS) NewArg(text string) {
+	// println("NewArg:", text)
 	d.v = new(Variable)
 	text = strings.TrimSpace(text)
 	if strings.HasSuffix(text, "?") {
@@ -259,6 +263,7 @@ func (d *DTS) EndArg(text string) {
 }
 
 func (d *DTS) EndFunction(text string) {
+	// println("EndFunction", text)
 	d.f.Text = text
 	if d.current.Funcs == nil {
 		d.current.Funcs = make([]*Function, 0)
