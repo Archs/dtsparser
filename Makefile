@@ -2,14 +2,15 @@
 # Use of this source code is governed by a BSD-style
 # license that can be found in the LICENSE file.
 
+TARGET = dtsparser
+EXT =
 PEGNAME = dts
-EXT = .exe
 
-$(PEGNAME)$(EXT): $(PEGNAME).peg.go main.go dts/dts.go
+$(TARGET)$(EXT): $(PEGNAME).peg.go main.go dts/dts.go
 	go build -o $@
 
 $(PEGNAME).peg.go: $(PEGNAME).peg
 	peg -switch -inline $(PEGNAME).peg
 
 clean:
-	rm -f $(PEGNAME)$(EXT) *.peg.go
+	rm -f $(TARGET)$(EXT) *.peg.go
