@@ -7,7 +7,7 @@ This work is in progress(json output is now ok), I'll finish it soon.
 
 # Usage
 
-    Usage: ./dts "path/to/target/file"
+    Usage: ./dtsparser "path/to/target/file"
 
 Json would be output to stdout.
 
